@@ -1,5 +1,4 @@
 # coding=utf-8
-import requests
 import sys
 sys.path.append("D:\\eclipse-workspace\\Tests\\Api_TestCase\\OnerWay_Api_DW")
 sys.path.append("D:\\eclipse-workspace\\Tests\\Api_TestCase")
@@ -8,7 +7,6 @@ from OnerWay_Api_DW.common.public_requests import PublicRequest
 from OnerWay_Api_DW.common.data_base_conn import Data_Base_Conn
 import random
 import json
-import pytest
 
 def test_kyc_open_business():
 
