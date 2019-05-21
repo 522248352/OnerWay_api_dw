@@ -3,6 +3,7 @@ import smtplib
 from email.mime.text import MIMEText
 from email.header import Header
 import time
+import logging
 
 '''
 发送邮件（QQ邮件）
@@ -44,6 +45,7 @@ def send_email(filename):
 
     try:
         smtp.sendmail(sender,receiver,msg.as_string())
+        # logging.log("aaa")
 
     except Exception as a:
         print("send fail:",a )
