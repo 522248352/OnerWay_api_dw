@@ -4,9 +4,10 @@ from email.mime.text import MIMEText
 from email.header import Header
 import time
 import logging
+from getConfig import GetConfigVal
 
 '''
-发送邮件（QQ邮件）
+发送邮件（QQ邮件）[纯文本]
 '''
 
 def send_email(filename):
@@ -21,7 +22,8 @@ def send_email(filename):
 
     #   发件人用户名和密码 不是登录密码，是授权码
     user = "522248352@qq.com"
-    password = "jagmcfcgkebubgbf"
+    cf = GetConfigVal()
+    password = cf.getVal("email", "keyNum")
 
     #   发件人
     sender = "522248352@qq.com"
@@ -32,7 +34,7 @@ def send_email(filename):
     #   邮件主题
     subject = "主题测试:Python test send email"
 
-    #   邮件设置
+    #   邮件设置 'plain'表示纯文本
     msg = MIMEText(file_msg,'plain','utf-8')
     msg['subject'] = Header(subject,'utf-8')
     msg['from'] = sender
