@@ -2,7 +2,6 @@
 import smtplib
 from email.mime.text import MIMEText
 from email.header import Header
-import time
 import logging
 from getConfig import GetConfigVal
 
@@ -32,7 +31,7 @@ def send_email(filename):
     receiver = '872230912@qq.com'
 
     #   邮件主题
-    subject = "主题测试:Python test send email"
+    subject = "主题测试-纯文本:Python test send email"
 
     #   邮件设置 'plain'表示纯文本
     msg = MIMEText(file_msg,'plain','utf-8')
@@ -51,12 +50,13 @@ def send_email(filename):
 
     except Exception as a:
         print("send fail:",a )
+        logging.exception("发送失败", exc_info=True)
     else:
         print("send success")
 
     # 结束SMTP会话
     smtp.quit()
-    print('send email success!')
+
 
 if __name__ == "__main__":
     print("55555")
