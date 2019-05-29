@@ -14,6 +14,7 @@ import logging
 
 def send_Email_attac(filename):
 
+
     # 创建邮件对象
     msg = MIMEMultipart()
 
@@ -61,14 +62,14 @@ def send_Email_attac(filename):
 
         smtp = smtplib.SMTP_SSL() # 用SMTP报错：Connection unexpectedly closed ，用SSL加密的然后换成SMTP_SSL
         smtp.connect('smtp.qq.com',465)
-        smtp.login(user,password)
+        smtp.login(user, password)
 
         try:
             smtp.sendmail(sender,receiver,msg.as_string())
             # logging.log("aaa")
 
         except Exception as a:
-            print("send fail:",a )
+            print("send fail:", a )
             logging.exception("发送失败", exc_info=True)
         else:
             print("send email success!")
