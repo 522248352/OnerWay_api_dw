@@ -5,6 +5,7 @@ from email.header import Header
 from email import encoders
 from email.mime.multipart import MIMEMultipart, MIMEBase
 from getConfig import GetConfigVal
+import logging
 
 '发送邮件--附件，' \
 '如果Email中要加上附件怎么办？带附件的邮件可以看做包含若干部分的邮件：文本和各个附件本身，' \
@@ -20,7 +21,7 @@ def send_Email_attac(filename):
     sender = "522248352@qq.com"
 
     #   收件人
-    receiver = '872230912@qq.com'
+    receiver = ['872230912@qq.com', 'wan.du@onerway.com']
 
     subject = "主题测试-附件:Python test send email"
     msg["from"] = sender
@@ -31,6 +32,7 @@ def send_Email_attac(filename):
 
     # 添加附件就是加上一个MIMEBase，从本地读取一个csv文件:
     with open(filename, "rb") as f:
+
 
         # 设置附件的MIME和文件名，这里是csv类型:
         mime = MIMEBase("CSV","csv",filename="csv.csv")
@@ -67,12 +69,13 @@ def send_Email_attac(filename):
 
         except Exception as a:
             print("send fail:",a )
+            logging.exception("发送失败", exc_info=True)
         else:
-            print("send success")
+            print("send email success!")
 
         # 结束SMTP会话
         smtp.quit()
-        print('send email success!')
+
 
 if __name__ == "__main__":
     print("55555")
