@@ -8,6 +8,7 @@ from getConfig import GetConfigVal
 import logging
 
 '发送邮件--附件，' \
+
 '如果Email中要加上附件怎么办？带附件的邮件可以看做包含若干部分的邮件：文本和各个附件本身，' \
 '所以，可以构造一个MIMEMultipart对象代表邮件本身，' \
 '然后往里面加上一个MIMEText作为邮件正文，再继续往里面加上表示附件的MIMEBase对象即可：'

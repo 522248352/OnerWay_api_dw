@@ -3,6 +3,8 @@ import logging
 
 # 5种打日志的方法： debug 、info 、warning 、error 、critical。默认的是WARNING，当在WARNING或之上时才被跟踪。
 
+# 日志操作
+
 def loggingTest():
     'logging-- filename 指定日志存放文件，level 指定logging级别'
     logging.basicConfig(level=logging.INFO, filename=r"D:\eclipse-workspace\Tests\Api_TestCase\OnerWay_Api_DW\logs\logs.log")
