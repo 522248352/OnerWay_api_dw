@@ -3,7 +3,7 @@ import sys
 import json
 import random
 import time
-
+import pytest
 # 当你在IDE中启动解释器时，当前的工作目录就是项目目录，能顺利调用同项目中的模块；但是当你通过CMD命令行启动时，
 # 当前工作目录为你启动解释器时所在的目录，如果当时的位置不是项目目录，那么项目目录中的模块就不会被找到，
 # 因此运行的时候报错:ModuleNotFoundError: No Module named ...（在例子中我的当前目录是.../package2是项目目录底下的一个文件夹，不是项目目录，所以报错）
@@ -51,6 +51,7 @@ def test_businessmen_can_use_channel():
     sql = "SELECT count(*) from m_channeltype_map where mer_no='276944710478757888'"
     rows = db.play(sql=sql)
     vals = rows[0][0]
+    print(vals)
     assert vals == r_resu.json()["data"]["count"]
 
 
@@ -491,10 +492,7 @@ def test_ti_xian_zhang_hao_delete_no_wdaccid():
 
 if __name__ == '__main__':
 
-    test_dian_pu_select()
+    test_zhuan_zhang_apply()
     # print(dir(time))
     # print(range.__doc__)
-    a = set([1,2,3])
-    print(a)
-    print(sys.path)
 

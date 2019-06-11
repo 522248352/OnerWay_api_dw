@@ -1,7 +1,7 @@
 # coding=utf-8
 import requests
 import cookielib
-
+import json
 # admin系统登录接口
 url = "https://sandbox-manage-onerway.ronhan.com/login.htm"
 headers ={"Connection": "keep-alive",
@@ -22,9 +22,10 @@ par = {"username":"admin","password":"123123zxc"}
 seson = requests.session()  # 用session保持登录
 
 r_resu = seson.post(url=url, headers=headers,verify=False,data=par)
+print("------------------------------adcd")
 print(r_resu.text)
-cok = r_resu.cookies
-print(cok)
+print(seson.cookies)
+print(r_resu.cookies)
 print(r_resu.status_code)
 print("---------------------------------------123456")
 
@@ -60,3 +61,10 @@ print(r_resu1.text)
 #
 # for a in r.cookies:
 #     print(a.value)
+# admin系统 商户调账申请
+
+url2 = "https://sandbox-manage-onerway.ronhan.com/merchantAccountRecord/insertAccountRecord.htm"
+pam = {"accountType":"2","accountMoney":"40","merNo":"290746918668214272","merName":"张厚荣","remark": "入账40","currencyCode": "EUR"}
+r_resu2 = seson.post(url=url2,data=pam,verify=False)
+print(json.dumps(r_resu2.json(),indent=2,sort_keys=False,ensure_ascii=False))
+

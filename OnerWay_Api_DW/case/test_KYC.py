@@ -1,5 +1,6 @@
 # coding=utf-8
 import sys
+import pytest
 sys.path.append("D:\\eclipse-workspace\\Tests\\Api_TestCase\\OnerWay_Api_DW")
 sys.path.append("D:\\eclipse-workspace\\Tests\\Api_TestCase")
 from OnerWay_Api_DW.common.getConfig import GetConfigVal
@@ -137,3 +138,6 @@ def test_kyc_open_hongkong():
         print(row)
         print(unicode(row[0]))
     assert len(rows) == 1 and unicode(row[0]) == mernos
+
+if __name__ == '__main__':
+    pytest.main(["-v", "test_KYC.py::test_kyc_open_hongkong"])

@@ -14,3 +14,4 @@ with open(r"D:\eclipse-workspace\Tests\Api_TestCase\auto_test\test_case_data\csv
         print(row)
         a.append(row)
 
+    print(a)

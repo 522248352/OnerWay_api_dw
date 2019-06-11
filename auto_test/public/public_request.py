@@ -10,7 +10,6 @@ class Public_Request(object):
 
         r = requests.post(url=url, data=parameters, files=files_image)
         # r = requests.request("POST", )
-        print(r.text)
         return r
 
 
