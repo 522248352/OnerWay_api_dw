@@ -31,4 +31,4 @@ def test_image_upload():
     status = r.json()["status"]
     code = r.json()["code"]
 
-    assert status == 1 and code == 10021
+    assert status == 1 and code == 10021111
