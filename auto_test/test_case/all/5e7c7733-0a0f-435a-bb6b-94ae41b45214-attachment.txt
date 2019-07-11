@@ -1,0 +1,7 @@
+----------------------------------图片上传超过2M------------------------------------
+{
+  "status": 0, 
+  "message": "上传失败 : 上传文件太大", 
+  "code": 10020, 
+  "sign": "LjGNcIeuTHP+zSg/TDOJspli5mpTnceu7vosGO/UOkPlZifTMBAk2mzh/QcDt9NRIG1+GnDgIRBYB/XhFgVmBCP7B1uJ9bhBKYkdOL+q+bcpOJ0kwyz+TyRu0giKrA2W4yVU7AGpFVo6Mm+nF5twtGLNYWwsk5kJXZz4ctVd9PU="
+}

@@ -1,0 +1,35 @@
+ERROR:root:发送失败
+Traceback (most recent call last):
+  File "D:/eclipse-workspace/Tests/Api_TestCase/OnerWay_Api_DW/common/send_email_attach.py", line 68, in send_Email_attac
+    smtp.sendmail(senders,receiver,msg.as_string())
+NameError: global name 'senders' is not defined
+ERROR:root:发送失败
+Traceback (most recent call last):
+  File "D:/eclipse-workspace/Tests/Api_TestCase/OnerWay_Api_DW/common/send_email_attach.py", line 70, in send_Email_attac
+    smtp.sendmail(senders,receiver,msg.as_string())
+NameError: global name 'senders' is not defined
+ERROR:root:发送失败
+Traceback (most recent call last):
+  File "D:/eclipse-workspace/Tests/Api_TestCase/OnerWay_Api_DW/common/send_email_attach.py", line 70, in send_Email_attac
+    smtp.sendmail(senders,receiver,msg.as_string())
+NameError: global name 'senders' is not defined
+ERROR:root:发送失败
+Traceback (most recent call last):
+  File "D:/eclipse-workspace/Tests/Api_TestCase/OnerWay_Api_DW/common/send_email_attach.py", line 70, in send_Email_attac
+    smtp.sendmail(senders,receiver,msg.as_string())
+NameError: global name 'senders' is not defined
+ERROR:root:发送失败
+Traceback (most recent call last):
+  File "D:/eclipse-workspace/Tests/Api_TestCase/OnerWay_Api_DW/common/send_email_attach.py", line 70, in send_Email_attac
+    smtp.sendmail(senders,receiver,msg.as_string())
+NameError: global name 'senders' is not defined
+ERROR:root:发送失败
+Traceback (most recent call last):
+  File "D:/eclipse-workspace/Tests/Api_TestCase/OnerWay_Api_DW/common/send_email_attach.py", line 70, in send_Email_attac
+    smtp.sendmail(senders,receiver,msg.as_string())
+NameError: global name 'senders' is not defined
+ERROR:root:发送失败
+Traceback (most recent call last):
+  File "D:/eclipse-workspace/Tests/Api_TestCase/OnerWay_Api_DW/common/send_email_attach.py", line 70, in send_Email_attac
+    smtp.sendmail(senders,receiver,msg.as_string())
+NameError: global name 'senders' is not defined

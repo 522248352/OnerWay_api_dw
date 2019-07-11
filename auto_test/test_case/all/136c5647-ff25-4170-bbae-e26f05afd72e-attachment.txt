@@ -1,0 +1,14 @@
+------------------------------------开户---------------------------
+{
+  "status": 1, 
+  "code": 10021, 
+  "dataSign": "VD1I6zsuDcm8bZxEHsShbg5SO6bIAn6FuaW59g4/iO0LAVHhDHt6iQuOLnWXMIDSHGr3LLTVZWoYKY49hq3EopJoGytBlIb+WqK+eloEv0vTMA1H7/TlTOv6WuDzEL+bWja7dMuPD7TkKiT3vRtFLr/y2iO1F3RLUvBfkj9vAPk=", 
+  "sign": "bQY/ckFa5bL0VpV8M9MhsVI3GLkCSIGN3sBJovRbUsCaSZDMPmQCSOGROgWm/kS6nBqUndajNnF5OwW9lZoENhtRAbIvYFKZNbs1DARZwFXkirUufd9wsWQsWW1xHcL1OLGS7+Ug+fFG9qC7idRQRGbInRwpiR/DEGHa62Ui2f0=", 
+  "message": "信息上传成功.", 
+  "data": {
+    "merStatus": 0, 
+    "merNo": "304516185737822208", 
+    "accountType": "1", 
+    "area": "中国"
+  }
+}

@@ -1,0 +1,1191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="873d4c51-3351-4c72-9d01-0f911c2ae0ac" name="Default" comment="加密">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auto_test/ss/pytest_test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auto_test/ss/ssdg.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Api_TestCase.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Api_TestCase.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnerWay_Api_DW/case/test_account_query.py" beforeDir="false" afterPath="$PROJECT_DIR$/OnerWay_Api_DW/case/test_account_query.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnerWay_Api_DW/case/test_image_upload.py" beforeDir="false" afterPath="$PROJECT_DIR$/OnerWay_Api_DW/case/test_image_upload.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnerWay_Api_DW/common/data_base_conn.py" beforeDir="false" afterPath="$PROJECT_DIR$/OnerWay_Api_DW/common/data_base_conn.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnerWay_Api_DW/common/demos.py" beforeDir="false" afterPath="$PROJECT_DIR$/OnerWay_Api_DW/common/demos.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OnerWay_Api_DW/common/listTest.py" beforeDir="false" afterPath="$PROJECT_DIR$/OnerWay_Api_DW/common/listTest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auto_test/csv_opera.py" beforeDir="false" afterPath="$PROJECT_DIR$/auto_test/csv_opera.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auto_test/test_case_data/test.xls" beforeDir="false" afterPath="$PROJECT_DIR$/auto_test/test_case_data/test.xls" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auto_test/web_login_channel.py" beforeDir="false" afterPath="$PROJECT_DIR$/auto_test/web_login_channel.py" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/Api_TestCase$py_test_for_test_account_query_test_account_query.coverage" NAME="py.test for test_account_query.test_account_query Coverage Results" MODIFIED="1562220359148" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/OnerWay_Api_DW/case" />
+    <SUITE FILE_PATH="coverage/Api_TestCase$test_case_api__1_.coverage" NAME="test_case_api (1) Coverage Results" MODIFIED="1556509429718" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/auto_test" />
+    <SUITE FILE_PATH="coverage/Api_TestCase$py_test_for_test_KYC_test_kyc_open_business.coverage" NAME="py.test for test_KYC.test_kyc_open_business Coverage Results" MODIFIED="1560235183820" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/OnerWay_Api_DW/case" />
+    <SUITE FILE_PATH="coverage/Api_TestCase$py_test_for_test_fixture_2_test_he.coverage" NAME="py.test for test_fixture_2.test_he Coverage Results" MODIFIED="1557212533372" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/fixture_test" />
+    <SUITE FILE_PATH="coverage/Api_TestCase$py_test_for_test_case_api_test_cash_account_enquiry.coverage" NAME="py.test for test_case_api.test_cash_account_enquiry Coverage Results" MODIFIED="1558431694084" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/auto_test/test_case" />
+    <SUITE FILE_PATH="coverage/Api_TestCase$diy_demo.coverage" NAME="diy_demo Coverage Results" MODIFIED="1557196397063" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/auto_test" />
+    <SUITE FILE_PATH="coverage/Api_TestCase$py_test_for_test_fixture_2_test_login.coverage" NAME="py.test for test_fixture_2.test_login Coverage Results" MODIFIED="1557212029316" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/fixture_test" />
+    <SUITE FILE_PATH="coverage/Api_TestCase$py_test_for_test_aa_test_login_web.coverage" NAME="py.test for test_aa.test_login_web Coverage Results" MODIFIED="1557308432566" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/auto_test/ss" />
+    <SUITE FILE_PATH="coverage/Api_TestCase$py_test_for_test_case_api_test_kyc_open_accounts.coverage" NAME="py.test for test_case_api.test_kyc_open_accounts Coverage Results" MODIFIED="1558409427381" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/auto_test/test_case" />
+    <SUITE FILE_PATH="coverage/Api_TestCase$logtest.coverage" NAME="logtest Coverage Results" MODIFIED="1559115114971" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/OnerWay_Api_DW/common" />
+    <SUITE FILE_PATH="coverage/Api_TestCase$py_test_in_businessmen_can_use_channel_queries_py.coverage" NAME="py.test in businessmen_can_use_channel_queries.py Coverage Results" MODIFIED="1558076141260" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/auto_test/test_case" />
+    <SUITE FILE_PATH="coverage/Api_TestCase$py_test_for_web_login_channel_test_login_web.coverage" NAME="py.test for web_login_channel.test_login_web Coverage Results" MODIFIED="1562229296030" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/auto_test" />
+    <SUITE FILE_PATH="coverage/Api_TestCase$test_aa.coverage" NAME="test_aa Coverage Results" MODIFIED="1557048024335" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/auto_test/ss" />
+    <SUITE FILE_PATH="coverage/Api_TestCase$datetime_demo.coverage" NAME="datetime_demo Coverage Results" MODIFIED="1558950935778" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/OnerWay_Api_DW/common" />
+    <SUITE FILE_PATH="coverage/Api_TestCase$test_case_api.coverage" NAME="test_case_api Coverage Results" MODIFIED="1556446867351" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Api_TestCase$pytest_test.coverage" NAME="pytest_test Coverage Results" MODIFIED="1557137907175" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/auto_test/ss" />
+    <SUITE FILE_PATH="coverage/Api_TestCase$py_test_for_web_login_channel_test_dianpu.coverage" NAME="py.test for web_login_channel.test_dianpu Coverage Results" MODIFIED="1558429554201" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/auto_test" />
+    <SUITE FILE_PATH="coverage/Api_TestCase$py_test_for_test_case_api_test_businessmen_can_use_channel.coverage" NAME="py.test for test_case_api.test_businessmen_can_use_channel Coverage Results" MODIFIED="1558492302546" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/auto_test/test_case" />
+    <SUITE FILE_PATH="coverage/Api_TestCase$py_test_for_test_fixture_2_Test_hh_test_he1.coverage" NAME="py.test for test_fixture_2.Test_hh.test_he1 Coverage Results" MODIFIED="1557212956225" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/fixture_test" />
+    <SUITE FILE_PATH="coverage/Api_TestCase$py_test_in_demos_py.coverage" NAME="py.test in demos.py Coverage Results" MODIFIED="1559294013192" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/OnerWay_Api_DW/common" />
+    <SUITE FILE_PATH="coverage/Api_TestCase$py_test_for_demos_test_2.coverage" NAME="py.test for demos.test_2 Coverage Results" MODIFIED="1559293756756" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/OnerWay_Api_DW/common" />
+    <SUITE FILE_PATH="coverage/Api_TestCase$py_test_for_test_fixture_2_test_num.coverage" NAME="py.test for test_fixture_2.test_num Coverage Results" MODIFIED="1557226708759" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/fixture_test" />
+    <SUITE FILE_PATH="coverage/Api_TestCase$py_test_for_businessmen_can_use_channel_queries_test_businessmen_can_use_channel.coverage" NAME="py.test for businessmen_can_use_channel_queries.test_businessmen_can_use_channel Coverage Results" MODIFIED="1558076003714" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/auto_test/test_case" />
+    <SUITE FILE_PATH="coverage/Api_TestCase$send_email.coverage" NAME="send_email Coverage Results" MODIFIED="1559027162540" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/OnerWay_Api_DW/common" />
+    <SUITE FILE_PATH="coverage/Api_TestCase$py_test_in_ssdg_py.coverage" NAME="py.test in ssdg.py Coverage Results" MODIFIED="1557197086859" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/auto_test/ss" />
+    <SUITE FILE_PATH="coverage/Api_TestCase$py_test_for_test_image_upload_test_image_upload.coverage" NAME="py.test for test_image_upload.test_image_upload Coverage Results" MODIFIED="1562220302206" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/OnerWay_Api_DW/case" />
+    <SUITE FILE_PATH="coverage/Api_TestCase$csv_opera.coverage" NAME="csv_opera Coverage Results" MODIFIED="1562143880939" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/auto_test" />
+    <SUITE FILE_PATH="coverage/Api_TestCase$py_test_for_test_fixture_2_test_demo.coverage" NAME="py.test for test_fixture_2.test_demo Coverage Results" MODIFIED="1557380287346" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/fixture_test" />
+    <SUITE FILE_PATH="coverage/Api_TestCase$py_test_in_test_image_upload_py.coverage" NAME="py.test in test_image_upload.py Coverage Results" MODIFIED="1562220270738" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/OnerWay_Api_DW/case" />
+    <SUITE FILE_PATH="coverage/Api_TestCase$py_test_in_test_aa_py.coverage" NAME="py.test in web_login_channel.py Coverage Results" MODIFIED="1557309774927" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/auto_test/ss" />
+    <SUITE FILE_PATH="coverage/Api_TestCase$excel_opera.coverage" NAME="excel_opera Coverage Results" MODIFIED="1560243030035" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/auto_test" />
+    <SUITE FILE_PATH="coverage/Api_TestCase$session_ts.coverage" NAME="session_ts Coverage Results" MODIFIED="1557298933318" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/auto_test" />
+    <SUITE FILE_PATH="coverage/Api_TestCase$admin_login_session_ts.coverage" NAME="admin_login_session_ts Coverage Results" MODIFIED="1557910524212" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/auto_test" />
+    <SUITE FILE_PATH="coverage/Api_TestCase$has1_md5.coverage" NAME="has1_md5 Coverage Results" MODIFIED="1559801132572" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/OnerWay_Api_DW/common" />
+    <SUITE FILE_PATH="coverage/Api_TestCase$demos.coverage" NAME="demos Coverage Results" MODIFIED="1562146393899" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/OnerWay_Api_DW/common" />
+    <SUITE FILE_PATH="coverage/Api_TestCase$py_test_for_test_fixture_2_Test_hh_test_he2.coverage" NAME="py.test for test_fixture_2.Test_hh.test_he2 Coverage Results" MODIFIED="1557212982693" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/fixture_test" />
+    <SUITE FILE_PATH="coverage/Api_TestCase$test_case_api__2_.coverage" NAME="test_case_api (2) Coverage Results" MODIFIED="1556527369267" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/auto_test/test_case" />
+    <SUITE FILE_PATH="coverage/Api_TestCase$getConfig.coverage" NAME="getConfig Coverage Results" MODIFIED="1558077256663" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/OnerWay_Api_DW/common" />
+    <SUITE FILE_PATH="coverage/Api_TestCase$py_test_for_test_KYC_test_kyc_open.coverage" NAME="py.test for test_KYC.test_kyc_open Coverage Results" MODIFIED="1558337342004" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/OnerWay_Api_DW/case" />
+    <SUITE FILE_PATH="coverage/Api_TestCase$py_test_for_test_KYC_test_kyc_open_personal.coverage" NAME="py.test for test_KYC.test_kyc_open_personal Coverage Results" MODIFIED="1558407984412" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/OnerWay_Api_DW/case" />
+    <SUITE FILE_PATH="coverage/Api_TestCase$picture_upload.coverage" NAME="picture_upload Coverage Results" MODIFIED="1559095917141" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/auto_test/test_case" />
+    <SUITE FILE_PATH="coverage/Api_TestCase$ssdg.coverage" NAME="ssdg Coverage Results" MODIFIED="1558331939670" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/auto_test/ss" />
+    <SUITE FILE_PATH="coverage/Api_TestCase$py_test_for_test_aa_test_sele_dianpu.coverage" NAME="py.test for test_aa.test_sele_dianpu Coverage Results" MODIFIED="1557309395836" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/auto_test/ss" />
+    <SUITE FILE_PATH="coverage/Api_TestCase$py_test_in_test_case_api_py.coverage" NAME="py.test in test_case_api.py Coverage Results" MODIFIED="1560235539674" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/auto_test/test_case" />
+    <SUITE FILE_PATH="coverage/Api_TestCase$testssss.coverage" NAME="testssss Coverage Results" MODIFIED="1556523432605" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/auto_test/test_case" />
+    <SUITE FILE_PATH="coverage/Api_TestCase$send_email_attach.coverage" NAME="send_email_attach Coverage Results" MODIFIED="1559099006795" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/OnerWay_Api_DW/common" />
+    <SUITE FILE_PATH="coverage/Api_TestCase$py_test_for_ssdg_test_js_id.coverage" NAME="py.test for ssdg.test_js_id Coverage Results" MODIFIED="1557229132471" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/auto_test/ss" />
+    <SUITE FILE_PATH="coverage/Api_TestCase$py_test_in_test_fixture_2_py.coverage" NAME="py.test in test_fixture_2.py Coverage Results" MODIFIED="1557911480292" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/fixture_test" />
+    <SUITE FILE_PATH="coverage/Api_TestCase$py_test_in_test_KYC_py.coverage" NAME="py.test in test_KYC.py Coverage Results" MODIFIED="1560235199174" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/OnerWay_Api_DW/case" />
+    <SUITE FILE_PATH="coverage/Api_TestCase$py_test_for_test_case_api_test_zhang_hu_select_no_merno.coverage" NAME="py.test for test_case_api.test_zhang_hu_select_no_merno Coverage Results" MODIFIED="1557213585287" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/auto_test/test_case" />
+    <SUITE FILE_PATH="coverage/Api_TestCase$py_test_in_web_login_channel_py.coverage" NAME="py.test in web_login_channel.py Coverage Results" MODIFIED="1562229618770" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/auto_test" />
+    <SUITE FILE_PATH="coverage/Api_TestCase$py_test_for_test_fixture_2_Test_hh.coverage" NAME="py.test for test_fixture_2.Test_hh Coverage Results" MODIFIED="1557213017173" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/fixture_test" />
+    <SUITE FILE_PATH="coverage/Api_TestCase$listTest.coverage" NAME="listTest Coverage Results" MODIFIED="1558922025490" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/OnerWay_Api_DW/common" />
+    <SUITE FILE_PATH="coverage/Api_TestCase$py_test_for_test_fixture_2_Test_hh_test_he3.coverage" NAME="py.test for test_fixture_2.Test_hh.test_he3 Coverage Results" MODIFIED="1557212917274" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/fixture_test" />
+    <SUITE FILE_PATH="coverage/Api_TestCase$py_test_in_test_fixture_1_py.coverage" NAME="py.test in test_fixture_1.py Coverage Results" MODIFIED="1557197613810" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/fixture_test" />
+    <SUITE FILE_PATH="coverage/Api_TestCase$py_test_for_test_KYC_test_kyc_open_hongkong.coverage" NAME="py.test for test_KYC.test_kyc_open_hongkong Coverage Results" MODIFIED="1559208557646" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/OnerWay_Api_DW/case" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="Api_TestCase" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="test_account_query.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/OnerWay_Api_DW/case/test_account_query.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="437">
+              <caret line="25" selection-start-line="25" selection-end-line="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test_KYC.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/OnerWay_Api_DW/case/test_KYC.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2679">
+              <caret line="142" column="59" selection-start-line="142" selection-start-column="37" selection-end-line="142" selection-end-column="59" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="web_login_channel.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/auto_test/web_login_channel.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="526">
+              <caret line="37" column="29" selection-start-line="37" selection-start-column="29" selection-end-line="37" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>PARTNERID</find>
+      <find>MERNO_HAVA_USERID</find>
+      <find>Ebay</find>
+      <find>店铺查询</find>
+      <find>店铺</find>
+      <find>123</find>
+      <find>1234</find>
+      <find>adcd</find>
+      <find>123456</find>
+      <find>dian</find>
+      <find>login_web</find>
+      <find>sele</find>
+      <find>1111</find>
+      <find>11111</find>
+      <find>dianpu</find>
+      <find>template</find>
+      <find>requests</find>
+      <find>商户可用通道查询</find>
+      <find>42</find>
+      <find>f5bb0c8de146c67b44babbf4e6584cc0</find>
+      <find>sele11111</find>
+    </findStrings>
+    <replaceStrings>
+      <replace />
+      <replace>global_parameter.PARTNERID</replace>
+      <replace>global_parameter.MERNO_HAVA_USERID</replace>
+      <replace>MERNO_NO_USERID</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/auto_test/data_base_conn.py" />
+        <option value="$PROJECT_DIR$/auto_test/test_case_api.py" />
+        <option value="$PROJECT_DIR$/auto_test/test_case/testssss.py" />
+        <option value="$PROJECT_DIR$/auto_test/config_py.py" />
+        <option value="$PROJECT_DIR$/auto_test/config/global_parameter.py" />
+        <option value="$PROJECT_DIR$/auto_test/public/public_request.py" />
+        <option value="$PROJECT_DIR$/auto_test/ss/pytest_test.py" />
+        <option value="$PROJECT_DIR$/auto_test/diy_demo.py" />
+        <option value="$PROJECT_DIR$/fixture_test/test_fixture_1.py" />
+        <option value="$PROJECT_DIR$/auto_test/session_ts.py" />
+        <option value="$PROJECT_DIR$/auto_test/ss/test_aa.py" />
+        <option value="$PROJECT_DIR$/fixture_test/test_fixture_2.py" />
+        <option value="$PROJECT_DIR$/OnerWay_Api/run_main.py" />
+        <option value="$PROJECT_DIR$/auto_test/admin_login_session_ts.py" />
+        <option value="$PROJECT_DIR$/auto_test/test_case/businessmen_can_use_channel_queries.py" />
+        <option value="$PROJECT_DIR$/auto_test/public/data_base_conn.py" />
+        <option value="$PROJECT_DIR$/auto_test/ss/ssdg.py" />
+        <option value="$PROJECT_DIR$/OnerWay_Api_DW/common/getConfig.py" />
+        <option value="$PROJECT_DIR$/auto_test/excel_opera.py" />
+        <option value="$PROJECT_DIR$/OnerWay_Api_DW/common/datetime_demo.py" />
+        <option value="$PROJECT_DIR$/OnerWay_Api_DW/config/config.ini" />
+        <option value="$PROJECT_DIR$/auto_test/test_case/picture_upload.py" />
+        <option value="$PROJECT_DIR$/OnerWay_Api_DW/common/send_email_attach.py" />
+        <option value="$PROJECT_DIR$/OnerWay_Api_DW/common/logtest.py" />
+        <option value="$PROJECT_DIR$/OnerWay_Api_DW/case/assets/test_account_query.py" />
+        <option value="$PROJECT_DIR$/OnerWay_Api_DW/case/test_KYC.py" />
+        <option value="$PROJECT_DIR$/OnerWay_Api_DW/common/has1_md5.py" />
+        <option value="$PROJECT_DIR$/auto_test/test_case/test_case_api.py" />
+        <option value="$PROJECT_DIR$/OnerWay_Api_DW/common/send_email.py" />
+        <option value="$PROJECT_DIR$/OnerWay_Api_DW/common/listTest.py" />
+        <option value="$PROJECT_DIR$/auto_test/csv_opera.py" />
+        <option value="$PROJECT_DIR$/OnerWay_Api_DW/common/demos.py" />
+        <option value="$PROJECT_DIR$/OnerWay_Api_DW/common/public_requests.py" />
+        <option value="$PROJECT_DIR$/OnerWay_Api_DW/case/test_account_query.py" />
+        <option value="$PROJECT_DIR$/OnerWay_Api_DW/common/data_base_conn.py" />
+        <option value="$PROJECT_DIR$/OnerWay_Api_DW/case/test_image_upload.py" />
+        <option value="$PROJECT_DIR$/auto_test/web_login_channel.py" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="253" />
+    <option name="y" value="34" />
+    <option name="width" value="1400" />
+    <option name="height" value="1000" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="AndroidView" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Api_TestCase" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Api_TestCase" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Api_TestCase" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Api_TestCase" type="462c0819:PsiDirectoryNode" />
+              <item name="auto_test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Api_TestCase" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Api_TestCase" type="462c0819:PsiDirectoryNode" />
+              <item name="auto_test" type="462c0819:PsiDirectoryNode" />
+              <item name="ss" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Api_TestCase" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Api_TestCase" type="462c0819:PsiDirectoryNode" />
+              <item name="auto_test" type="462c0819:PsiDirectoryNode" />
+              <item name="test_case" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Api_TestCase" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Api_TestCase" type="462c0819:PsiDirectoryNode" />
+              <item name="OnerWay_Api_DW" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Api_TestCase" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Api_TestCase" type="462c0819:PsiDirectoryNode" />
+              <item name="OnerWay_Api_DW" type="462c0819:PsiDirectoryNode" />
+              <item name="case" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Api_TestCase" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Api_TestCase" type="462c0819:PsiDirectoryNode" />
+              <item name="OnerWay_Api_DW" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Api_TestCase" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="jdk.selected.PYTHON_MODULE" value="Python 2.7" />
+    <property name="last_opened_file_path" value="D:/Python27/Scripts/HelloWorld" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\eclipse-workspace\Tests\Api_TestCase\OnerWay_Api_DW" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\eclipse-workspace\Tests\Api_TestCase\OnerWay_Api_DW\case" />
+      <recent name="D:\eclipse-workspace\Tests\Api_TestCase\auto_test" />
+      <recent name="D:\eclipse-workspace\Tests\Api_TestCase\auto_test\config" />
+      <recent name="D:\eclipse-workspace\Tests\Api_TestCase\auto_test\test_case_data" />
+      <recent name="D:\eclipse-workspace\Tests\Api_TestCase\auto_test\test_case" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python tests.py.test in web_login_channel.py">
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <properties />
+      <listeners />
+    </configuration>
+    <configuration name="py.test for test_account_query.test_account_query" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="Api_TestCase" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/OnerWay_Api_DW/case" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_account_query.test_account_query&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+    </configuration>
+    <configuration name="py.test for test_image_upload.test_image_upload" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="Api_TestCase" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/OnerWay_Api_DW/case" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_image_upload.test_image_upload&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+    </configuration>
+    <configuration name="py.test for web_login_channel.test_login_web" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="Api_TestCase" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/auto_test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;web_login_channel.test_login_web&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+    </configuration>
+    <configuration name="py.test in test_image_upload.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="Api_TestCase" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/OnerWay_Api_DW/case" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/OnerWay_Api_DW/case/test_image_upload.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+    </configuration>
+    <configuration name="py.test in web_login_channel.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="Api_TestCase" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/auto_test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/auto_test/web_login_channel.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+    </configuration>
+    <list>
+      <item itemvalue="Python tests.py.test for test_image_upload.test_image_upload" />
+      <item itemvalue="Python tests.py.test in test_image_upload.py" />
+      <item itemvalue="Python tests.py.test for test_account_query.test_account_query" />
+      <item itemvalue="Python tests.py.test for web_login_channel.test_login_web" />
+      <item itemvalue="Python tests.py.test in web_login_channel.py" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python tests.py.test in web_login_channel.py" />
+        <item itemvalue="Python tests.py.test for web_login_channel.test_login_web" />
+        <item itemvalue="Python tests.py.test for test_account_query.test_account_query" />
+        <item itemvalue="Python tests.py.test for test_image_upload.test_image_upload" />
+        <item itemvalue="Python tests.py.test in test_image_upload.py" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\fengy\AppData\Roaming\Subversion</configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="873d4c51-3351-4c72-9d01-0f911c2ae0ac" name="Default" comment="" />
+      <created>1556446804245</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1556446804245</updated>
+      <workItem from="1556446805550" duration="314000" />
+      <workItem from="1556508387294" duration="14192000" />
+      <workItem from="1556589853804" duration="3666000" />
+      <workItem from="1556603893625" duration="2144000" />
+      <workItem from="1557024156084" duration="10741000" />
+      <workItem from="1557133383667" duration="3473000" />
+      <workItem from="1557193944496" duration="15303000" />
+      <workItem from="1557279936459" duration="20256000" />
+      <workItem from="1557373932122" duration="12590000" />
+      <workItem from="1557454695876" duration="5872000" />
+      <workItem from="1557735569897" duration="2628000" />
+      <workItem from="1557798094313" duration="7055000" />
+      <workItem from="1557890354306" duration="5965000" />
+      <workItem from="1557970431724" duration="11139000" />
+      <workItem from="1558059214736" duration="12687000" />
+      <workItem from="1558318234234" duration="5134000" />
+      <workItem from="1558405615911" duration="5669000" />
+      <workItem from="1558428948325" duration="1300000" />
+      <workItem from="1558431315608" duration="136000" />
+      <workItem from="1558431647895" duration="70000" />
+      <workItem from="1558492281822" duration="662000" />
+      <workItem from="1558576180374" duration="3426000" />
+      <workItem from="1558676729514" duration="9077000" />
+      <workItem from="1558921126229" duration="7438000" />
+      <workItem from="1559015520294" duration="8421000" />
+      <workItem from="1559095813533" duration="7823000" />
+      <workItem from="1559208214864" duration="3329000" />
+      <workItem from="1559269126021" duration="9203000" />
+      <workItem from="1559530560176" duration="7115000" />
+      <workItem from="1559631219363" duration="74000" />
+      <workItem from="1559713864533" duration="72000" />
+      <workItem from="1559717976053" duration="6969000" />
+      <workItem from="1559800009886" duration="2806000" />
+      <workItem from="1560155151171" duration="4583000" />
+      <workItem from="1560234995666" duration="949000" />
+      <workItem from="1560242885626" duration="2872000" />
+      <workItem from="1560246630563" duration="567000" />
+      <workItem from="1560247225885" duration="636000" />
+      <workItem from="1560304675835" duration="5745000" />
+      <workItem from="1560404306441" duration="3320000" />
+      <workItem from="1560482366941" duration="2398000" />
+      <workItem from="1560912941002" duration="600000" />
+      <workItem from="1561015136080" duration="707000" />
+      <workItem from="1561018801923" duration="829000" />
+      <workItem from="1561432300418" duration="641000" />
+      <workItem from="1561520429174" duration="220000" />
+      <workItem from="1561704635399" duration="2667000" />
+      <workItem from="1561963451665" duration="2671000" />
+      <workItem from="1562037073616" duration="3091000" />
+      <workItem from="1562143600981" duration="1988000" />
+      <workItem from="1562210664970" duration="2039000" />
+      <workItem from="1562227743585" duration="2178000" />
+      <workItem from="1562316326277" duration="22000" />
+    </task>
+    <task id="LOCAL-00001" summary="email-send">
+      <created>1557394639212</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1557394639212</updated>
+    </task>
+    <task id="LOCAL-00002" summary="csv">
+      <created>1557459984184</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1557459984184</updated>
+    </task>
+    <task id="LOCAL-00003" summary="csv">
+      <created>1558409095470</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1558409095470</updated>
+    </task>
+    <task id="LOCAL-00004" summary="csv">
+      <created>1558409228948</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1558409228948</updated>
+    </task>
+    <task id="LOCAL-00005" summary="csv">
+      <created>1558428982715</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1558428982715</updated>
+    </task>
+    <task id="LOCAL-00006" summary="csv">
+      <created>1558949046559</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1558949046559</updated>
+    </task>
+    <task id="LOCAL-00007" summary="sendemail">
+      <created>1559027198447</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1559027198447</updated>
+    </task>
+    <task id="LOCAL-00008" summary="附件邮件">
+      <created>1559029450581</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1559029450581</updated>
+    </task>
+    <task id="LOCAL-00009" summary="logging">
+      <created>1559096124595</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1559096124595</updated>
+    </task>
+    <task id="LOCAL-00010" summary="pass">
+      <created>1559099724948</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1559099724948</updated>
+    </task>
+    <task id="LOCAL-00011" summary="pass">
+      <created>1559099768373</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1559099768373</updated>
+    </task>
+    <task id="LOCAL-00012" summary="logs">
+      <created>1559115932637</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1559115932637</updated>
+    </task>
+    <task id="LOCAL-00013" summary="logs">
+      <created>1559208493508</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1559208493508</updated>
+    </task>
+    <task id="LOCAL-00014" summary="logs">
+      <created>1559212962093</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1559212962093</updated>
+    </task>
+    <task id="LOCAL-00015" summary="加密">
+      <created>1559801176078</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1559801176078</updated>
+    </task>
+    <task id="LOCAL-00016" summary="加密">
+      <created>1559801424372</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1559801424372</updated>
+    </task>
+    <task id="LOCAL-00017" summary="add">
+      <created>1560247326274</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1560247326274</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="py_test_in_web_login_channel_py - 2019.07.04 at 16h 32m 18s.xml">
+      <configuration name="py.test in web_login_channel.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="py_test_for_web_login_channel_test_login_web - 2019.07.04 at 16h 34m 57s.xml">
+      <configuration name="py.test for web_login_channel.test_login_web" configurationId="tests" />
+    </history-entry>
+    <history-entry file="py_test_in_web_login_channel_py - 2019.07.04 at 16h 35m 11s.xml">
+      <configuration name="py.test in web_login_channel.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="py_test_in_web_login_channel_py - 2019.07.04 at 16h 35m 31s.xml">
+      <configuration name="py.test in web_login_channel.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="py_test_in_web_login_channel_py - 2019.07.04 at 16h 36m 10s.xml">
+      <configuration name="py.test in web_login_channel.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="py_test_in_web_login_channel_py - 2019.07.04 at 16h 36m 48s.xml">
+      <configuration name="py.test in web_login_channel.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="py_test_in_web_login_channel_py - 2019.07.04 at 16h 37m 38s.xml">
+      <configuration name="py.test in web_login_channel.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="py_test_in_web_login_channel_py - 2019.07.04 at 16h 38m 20s.xml">
+      <configuration name="py.test in web_login_channel.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="py_test_in_web_login_channel_py - 2019.07.04 at 16h 38m 40s.xml">
+      <configuration name="py.test in web_login_channel.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="py_test_in_web_login_channel_py - 2019.07.04 at 16h 40m 20s.xml">
+      <configuration name="py.test in web_login_channel.py" configurationId="tests" />
+    </history-entry>
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="245472000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32922733" />
+      <window_info anchor="right" id="Palette&#9;" order="9" />
+      <window_info id="Image Layers" order="2" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50053304" side_tool="true" weight="0.4837626" />
+      <window_info anchor="right" id="Maven Projects" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32885906" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" weight="0.44008958" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32922733" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info id="Designer" order="3" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.61769617" visible="true" weight="0.2857143" />
+      <window_info anchor="right" id="Database" order="6" />
+      <window_info anchor="right" id="SciView" order="7" />
+      <window_info id="Structure" order="1" sideWeight="0.38230383" side_tool="true" weight="0.21481876" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info id="UI Designer" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info id="Favorites" order="5" sideWeight="0.38230383" side_tool="true" weight="0.21481876" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39977604" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Messages" order="7" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32922733" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="SHOW_DIRTY_RECURSIVELY" value="true" />
+    <MESSAGE value="email-send" />
+    <MESSAGE value="csv" />
+    <MESSAGE value="sendemail" />
+    <MESSAGE value="附件邮件" />
+    <MESSAGE value="logging" />
+    <MESSAGE value="pass" />
+    <MESSAGE value="logs" />
+    <MESSAGE value="加密" />
+    <MESSAGE value="add" />
+    <option name="LAST_COMMIT_MESSAGE" value="add" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="20" />
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://D:/Python27/Lib/site-packages/backports/configparser/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="762" column="8" selection-start-line="762" selection-start-column="8" selection-end-line="762" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OnerWay_Api_DW/config/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auto_test/ss/ssdg.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1083">
+          <caret line="64" selection-start-line="64" selection-end-line="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fixture_test/test.html" />
+    <entry file="file://$PROJECT_DIR$/fixture_test/test_fixture_2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Python27/Lib/site-packages/_pytest/config/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="47" column="4" selection-start-line="47" selection-start-column="4" selection-end-line="47" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fixture_test/test_fixture_1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="27" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OnerWay_Api_DW/run_main.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auto_test/admin_login_session_ts.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="42" column="1" lean-forward="true" selection-start-line="42" selection-start-column="1" selection-end-line="42" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auto_test/public/data_base_conn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="28" column="8" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Python27/Lib/site-packages/requests/sessions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="474" column="21" selection-start-line="474" selection-start-column="15" selection-end-line="474" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Python27/Lib/site-packages/xlrd/book.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="696" column="8" selection-start-line="696" selection-start-column="8" selection-end-line="696" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_PLUGINS_DIR$/python/helpers/typeshed/stdlib/2/typing.pyi">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="241" column="8" selection-start-line="241" selection-start-column="8" selection-end-line="241" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auto_test/config/global_parameter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.IntelliJIdea2018.1/system/python_stubs/1494736245/__builtin__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="3402" column="8" selection-start-line="3402" selection-start-column="8" selection-end-line="3402" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OnerWay_Api_DW/case/test.html" />
+    <entry file="file://$USER_HOME$/.IntelliJIdea2018.1/system/python_stubs/1494736245/datetime.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="162" column="6" selection-start-line="162" selection-start-column="6" selection-end-line="162" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Python27/Lib/smtplib.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="337">
+          <caret line="672" column="31" selection-start-line="672" selection-start-column="30" selection-end-line="672" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Python27/Lib/email/header.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="144" column="8" selection-start-line="144" selection-start-column="8" selection-end-line="144" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Python27/Lib/email/mime/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Python27/Lib/logging/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="428">
+          <caret line="1532" column="10" selection-start-line="1532" selection-start-column="4" selection-end-line="1532" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OnerWay_Api_DW/common/send_email_attach.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OnerWay_Api_DW/common/getConfig.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auto_test/test_case/picture_upload.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="20" column="14" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Python27/Lib/site-packages/_pytest/outcomes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="339">
+          <caret line="77" column="4" selection-start-line="77" selection-start-column="4" selection-end-line="77" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OnerWay_Api_DW/config/config.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OnerWay_Api_DW/common/logtest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="28" column="23" lean-forward="true" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auto_test/test_case/testssss.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="13" column="33" selection-start-line="9" selection-start-column="14" selection-end-line="13" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auto_test/ss/pytest_test.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://D:/Python27/Lib/site-packages/pip/_vendor/urllib3/packages/ordered_dict.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="107">
+          <caret line="141" column="8" selection-start-line="141" selection-start-column="8" selection-end-line="141" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OnerWay_Api_DW/common/datetime_demo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="8" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OnerWay_Api_DW/common/has1_md5.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="16" column="25" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auto_test/diy_demo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-399" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auto_test/excel_opera.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="27" column="24" selection-start-line="35" selection-end-line="35" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OnerWay_Api_DW/common/send_email.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1102">
+          <caret line="62" column="46" selection-start-line="62" selection-start-column="29" selection-end-line="62" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Python27/Lib/unittest/case.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1008">
+          <caret line="182" column="41" selection-start-line="182" selection-start-column="31" selection-end-line="182" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auto_test/public/public_request.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="10" column="22" lean-forward="true" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auto_test/csv_opera.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_PLUGINS_DIR$/python/helpers/pydev/_pydevd_bundle/pydevd_utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="89" selection-start-line="89" selection-end-line="89" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Python27/Lib/urllib.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="1296" selection-start-line="1296" selection-end-line="1296" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OnerWay_Api_DW/common/demos.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OnerWay_Api_DW/common/listTest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="760">
+          <caret line="42" column="29" selection-start-line="42" selection-start-column="29" selection-end-line="42" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OnerWay_Api_DW/common/out.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" column="5" selection-start-line="15" selection-end-line="15" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auto_test/test_case/test_case_api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1052">
+          <caret line="473" column="47" selection-start-line="473" selection-start-column="47" selection-end-line="473" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OnerWay_Api_DW/common/public_requests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="11" column="55" selection-start-line="11" selection-start-column="55" selection-end-line="11" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OnerWay_Api_DW/common/data_base_conn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="35" column="26" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OnerWay_Api_DW/case/test_image_upload.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="6" column="63" lean-forward="true" selection-start-line="6" selection-start-column="63" selection-end-line="6" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OnerWay_Api_DW/case/test_account_query.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OnerWay_Api_DW/case/test_KYC.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2679">
+          <caret line="142" column="59" selection-start-line="142" selection-start-column="37" selection-end-line="142" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Python27/Lib/site-packages/requests/api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="40" column="17" selection-start-line="40" selection-start-column="11" selection-end-line="40" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auto_test/web_login_channel.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="526">
+          <caret line="37" column="29" selection-start-line="37" selection-start-column="29" selection-end-line="37" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Python 2.7 interpreter library</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>Api_TestCase</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

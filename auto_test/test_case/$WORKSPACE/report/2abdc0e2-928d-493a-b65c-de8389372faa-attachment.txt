@@ -1,0 +1,18 @@
+----------------------------添加店铺--------------------------
+{
+  "status": 1, 
+  "code": 20002, 
+  "dataSign": "Yw00M9hHvbkzDExnumF/XEp7wJ5JUP/zro/7YdAEmnhMwa6mVm7xuP/WrT4RODRy3I691GNAp23N8Ny85f4Upf1FWP/q4Ch3UhiaKJ6IpZ6XVK+90KJs/JUaB3OJE0lw1us6g2XXAxaZ2OmXc4hv1ZlsRFtB63okjiSV8OYtiAU=", 
+  "sign": "aVx1LF6nqi5yugHMMAmxxRln3XX/cdsB20/OmvZoK7WbR3qJwon6OBX9t4dPX1VAwyoDgpaX096p5oj9F9cS35zl4iycmtNDVKR1RTAWTldLf+Jg/X/F2AhBtI5V5D8/qwWSINd7kbbpeV033pVjgQNuiBVRe6ZXjwxYy8C7XzA=", 
+  "message": "添加店铺成功", 
+  "data": {
+    "status": 0, 
+    "channelId": "304511610347749376", 
+    "auditId": "", 
+    "channelType": "104073509965275136", 
+    "channelName": "7181ebay1560328826", 
+    "merNo": "276944710478757888"
+  }
+}
+1
+(276560765987749888L, 0L, 1, '7181ebay1553664824', 104073509965275136L, None, datetime.datetime(2019, 3, 27, 13, 33, 45, 765000, tzinfo=psycopg2.tz.FixedOffsetTimezone(offset=480, name=None)), datetime.datetime(2019, 3, 27, 13, 33, 45, 750000, tzinfo=psycopg2.tz.FixedOffsetTimezone(offset=480, name=None)), None, None, None, {u'paypal_mer_info_img': u'/onerway/image1/2018/7/17/0b9a1fd5-601c-4edb-9142-fa4117ee3046.png', u'paypal_mer_info_img_id': u'184836625858199552', u'Url': u'http://www.baiducom', u'paypal_email': u'test@qq.com', u'paypal_mer_info': u'11', u'Email': u'856@qq.com'}, 171805655366242304L, 0, 'CHA276560765987749888', Decimal('0.3330'), 0, {u'0': u'0.1', u'5000': u'0.05', u'500': u'0.09'}, 1, None, None, None, 0, 0, None, None, None)

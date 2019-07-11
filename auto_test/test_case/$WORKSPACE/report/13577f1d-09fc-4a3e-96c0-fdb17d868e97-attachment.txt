@@ -1,0 +1,185 @@
+-------------------------店铺查询------------------------------
+{
+  "status": 1, 
+  "dataSign": "PIY5a1qECMP7iWurPdcu9gVUeBMC31sdPjGnfAXUw1lKpDnPXFFaPGMV9ZN8Ylh8LsbN1FEF9MEd3yoz14GwW9TxlVKCBK/FBonZruwIzzfPX1xL5qJw1IoSaAjnCsKjh4ZLDSJC06RfHmcAcoEQt5LZcZ3o8pbySU8yPYrZd3o=", 
+  "code": 101, 
+  "data": {
+    "count": 47, 
+    "list": [
+      {
+        "channel": {
+          "status": "0", 
+          "imagePath": "/onerway/image1/2018/7/17/0b9a1fd5-601c-4edb-9142-fa4117ee3046.png", 
+          "paypalMerInfo": "11", 
+          "channelTypeId": "104073509965275136", 
+          "url": "http://www.baiducom", 
+          "paypalEmail": "test@qq.com", 
+          "paypalAccountImageId": "184836625858199552", 
+          "channelId": "304511610347749376", 
+          "writeOffStatus": 0, 
+          "writeOffReasonRemark": "", 
+          "channelName": "7181ebay1560328826", 
+          "merNo": "276944710478757888", 
+          "email": "856@qq.com"
+        }
+      }, 
+      {
+        "channel": {
+          "status": "0", 
+          "imagePath": "/onerway/image1/2018/7/17/0b9a1fd5-601c-4edb-9142-fa4117ee3046.png", 
+          "paypalMerInfo": "11", 
+          "channelTypeId": "104073509965275136", 
+          "url": "http://www.baiducom", 
+          "paypalEmail": "test@qq.com", 
+          "paypalAccountImageId": "184836625858199552", 
+          "channelId": "304510198658269184", 
+          "writeOffStatus": 0, 
+          "writeOffReasonRemark": "", 
+          "channelName": "7181ebay1560328489", 
+          "merNo": "276944710478757888", 
+          "email": "856@qq.com"
+        }
+      }, 
+      {
+        "channel": {
+          "status": "0", 
+          "imagePath": "/onerway/image1/2018/7/17/0b9a1fd5-601c-4edb-9142-fa4117ee3046.png", 
+          "paypalMerInfo": "11", 
+          "channelTypeId": "104073509965275136", 
+          "url": "http://www.baiducom", 
+          "paypalEmail": "test@qq.com", 
+          "paypalAccountImageId": "184836625858199552", 
+          "channelId": "304509604677713920", 
+          "writeOffStatus": 0, 
+          "writeOffReasonRemark": "", 
+          "channelName": "7181ebay1560328347", 
+          "merNo": "276944710478757888", 
+          "email": "856@qq.com"
+        }
+      }, 
+      {
+        "channel": {
+          "status": "0", 
+          "imagePath": "/onerway/image1/2018/7/17/0b9a1fd5-601c-4edb-9142-fa4117ee3046.png", 
+          "paypalMerInfo": "11", 
+          "channelTypeId": "104073509965275136", 
+          "url": "http://www.baiducom", 
+          "paypalEmail": "test@qq.com", 
+          "paypalAccountImageId": "184836625858199552", 
+          "channelId": "304508915331268608", 
+          "writeOffStatus": 0, 
+          "writeOffReasonRemark": "", 
+          "channelName": "7181ebay1560328183", 
+          "merNo": "276944710478757888", 
+          "email": "856@qq.com"
+        }
+      }, 
+      {
+        "channel": {
+          "status": "0", 
+          "imagePath": "/onerway/image1/2018/7/17/0b9a1fd5-601c-4edb-9142-fa4117ee3046.png", 
+          "paypalMerInfo": "11", 
+          "channelTypeId": "104073509965275136", 
+          "url": "http://www.baiducom", 
+          "paypalEmail": "test@qq.com", 
+          "paypalAccountImageId": "184836625858199552", 
+          "channelId": "304120345047236608", 
+          "writeOffStatus": 0, 
+          "writeOffReasonRemark": "", 
+          "channelName": "7181ebay1560235541", 
+          "merNo": "276944710478757888", 
+          "email": "856@qq.com"
+        }
+      }, 
+      {
+        "channel": {
+          "status": "0", 
+          "imagePath": "/onerway/image1/2018/7/17/0b9a1fd5-601c-4edb-9142-fa4117ee3046.png", 
+          "paypalMerInfo": "11", 
+          "channelTypeId": "104073509965275136", 
+          "url": "http://www.baiducom", 
+          "paypalEmail": "test@qq.com", 
+          "paypalAccountImageId": "184836625858199552", 
+          "channelId": "301234456075862016", 
+          "writeOffStatus": 0, 
+          "writeOffReasonRemark": "", 
+          "channelName": "7181ebay1559547486", 
+          "merNo": "276944710478757888", 
+          "email": "856@qq.com"
+        }
+      }, 
+      {
+        "channel": {
+          "status": "0", 
+          "imagePath": "/onerway/image1/2018/7/17/0b9a1fd5-601c-4edb-9142-fa4117ee3046.png", 
+          "paypalMerInfo": "11", 
+          "channelTypeId": "104073509965275136", 
+          "url": "http://www.baiducom", 
+          "paypalEmail": "test@qq.com", 
+          "paypalAccountImageId": "184836625858199552", 
+          "channelId": "301233746055692288", 
+          "writeOffStatus": 0, 
+          "writeOffReasonRemark": "", 
+          "channelName": "7181ebay1559547317", 
+          "merNo": "276944710478757888", 
+          "email": "856@qq.com"
+        }
+      }, 
+      {
+        "channel": {
+          "status": "0", 
+          "imagePath": "/onerway/image1/2018/7/17/0b9a1fd5-601c-4edb-9142-fa4117ee3046.png", 
+          "paypalMerInfo": "11", 
+          "channelTypeId": "104073509965275136", 
+          "url": "http://www.baiducom", 
+          "paypalEmail": "test@qq.com", 
+          "paypalAccountImageId": "184836625858199552", 
+          "channelId": "301233424994304000", 
+          "writeOffStatus": 0, 
+          "writeOffReasonRemark": "", 
+          "channelName": "7181ebay1559547241", 
+          "merNo": "276944710478757888", 
+          "email": "856@qq.com"
+        }
+      }, 
+      {
+        "channel": {
+          "status": "0", 
+          "imagePath": "/onerway/image1/2018/7/17/0b9a1fd5-601c-4edb-9142-fa4117ee3046.png", 
+          "paypalMerInfo": "11", 
+          "channelTypeId": "104073509965275136", 
+          "url": "http://www.baiducom", 
+          "paypalEmail": "test@qq.com", 
+          "paypalAccountImageId": "184836625858199552", 
+          "channelId": "301232613602000896", 
+          "writeOffStatus": 0, 
+          "writeOffReasonRemark": "", 
+          "channelName": "7181ebay1559547047", 
+          "merNo": "276944710478757888", 
+          "email": "856@qq.com"
+        }
+      }, 
+      {
+        "channel": {
+          "status": "0", 
+          "imagePath": "/onerway/image1/2018/7/17/0b9a1fd5-601c-4edb-9142-fa4117ee3046.png", 
+          "paypalMerInfo": "11", 
+          "channelTypeId": "104073509965275136", 
+          "url": "http://www.baiducom", 
+          "paypalEmail": "test@qq.com", 
+          "paypalAccountImageId": "184836625858199552", 
+          "channelId": "301176175324200960", 
+          "writeOffStatus": 0, 
+          "writeOffReasonRemark": "", 
+          "channelName": "7181ebay1559533591", 
+          "merNo": "276944710478757888", 
+          "email": "856@qq.com"
+        }
+      }
+    ], 
+    "merNo": "276944710478757888", 
+    "page": 1
+  }, 
+  "sign": "RC/JuZY94Qz7BCuCmJSnv76dQk2nwn+GY1tdRY38cB8E3VIMXOejqoG02nfnfT+2iem9vOxiRntbylzLot8uQiAgh78cXrkwM2Cimw4nzJvk5jik9S7ffQ0MA+anxKLBmy0Z4qdZhyte9oaWghMjQZMPZCjaHU9nROFI8YtMjVw="
+}
+(47, 47)

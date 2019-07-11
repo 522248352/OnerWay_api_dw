@@ -1,0 +1,8 @@
+-------------------------提现银行账号-删除------------------------------
+282359685368152064
+{
+  "status": 1, 
+  "message": "提现账户282359685368152064删除成功", 
+  "code": 40015, 
+  "sign": "Ul6+GRRfuCrABBwMxt5exBeP+O2hTQfTZZx5rqa/jICBU7KJbCggGPfj8VaFdbVZumQpsYvLKu8HY0ddOqtdbj7hc54RRJedyfN/um4F4xV7ffv88f3557imGpNAxGblgw3rXkZqsRr6NRcEXkziA6QX7wl+FIjzlLqdzkWbWmk="
+}

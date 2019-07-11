@@ -2,7 +2,26 @@
 import json
 import time
 import logging
-"list 操作"
+'''list 操作
+        append
+        count
+        extend
+        index
+        pop
+        remove
+        reverse
+        sort
+        sorted
+    string 操作
+        find
+        join
+        lower
+        replace
+        split
+        strip
+        translate
+'''
+
 
 list_str = ["a","b","c"]
 

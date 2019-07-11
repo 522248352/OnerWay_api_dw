@@ -1,0 +1,12 @@
+----------------------------------图片上传------------------------------------
+{
+  "status": 1, 
+  "code": 10021, 
+  "dataSign": "US6gSTdqwYtvAw5b2hRvskUwzQwsb7iQhtm7VXRhvNLJHzb9UeqcOAP/tmxHv+K+rLkvCVgwLZ2x/jBE/0gNLrhhuH2yUqdBh/bZkh+AV94H3Oi9yb5+Bn5sQM4D8Vjos1iG48hg9ulfAl6eCJOLjL9yWKyMeAeoQV3kbQJXHko=", 
+  "sign": "hioyywonOYK9E6ZzhHKhcE1kjJTxl9Dluu4dTImAr5abDjjGGo+ic0u9t5kBRbHBi3zl9Ii4EdkWbacz3s+4s4vMbcCcmi8EbYH3dP6rmvdoZrSm2FOtVYbixhUp6cKEjD81eze3co2yF4hmLLVmj/Fi+tQmSCcV+qlNcnGZszE=", 
+  "message": "上传成功", 
+  "data": {
+    "partenerId": "170776145556545536", 
+    "id": "304516184307564544"
+  }
+}

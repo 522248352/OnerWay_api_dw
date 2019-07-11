@@ -1,0 +1,13 @@
+-------------------------付款转账汇率及手续费率查询-不传金额------------------------------
+{
+  "status": 1, 
+  "code": 11, 
+  "dataSign": "fISqjttkdbjUBIQSMuhTfhpQ66RyLmHBbiUYmL0Q6KqbyNN8zplgna7om7LDPA19F6bEOipz0fseYVA2trf2WdYHitXJZgKYI2M/QI+200gQvm9SXCM9uFHKih6vtuly/eWAKNydAmi9kC0Mmp2UXpwZ+0oh8pbaJtbActn/SR0=", 
+  "sign": "EwSt1/L84aKFofhfCv7GK7hUnsVIcdB6HUNoT0GWExHIze/3JygeDvwEheUi8yg13dir8shp/Bkbv9CGUUffVO4Y0fF0ma0yfYMYKhZTAb+CZ/D6dG+2YvmO+YvKpjEN/o1U2HCaUclNFVb5uqE32XYg1UHltbYaOIJ7lShNJcc=", 
+  "message": "", 
+  "data": {
+    "feeRate": 0.01, 
+    "rate": 1.1813, 
+    "feeType": 0
+  }
+}

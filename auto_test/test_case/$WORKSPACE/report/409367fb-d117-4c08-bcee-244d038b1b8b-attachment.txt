@@ -1,0 +1,8 @@
+-------------------------账户查询-merNo不填------------------------------
+{
+  "status": 0, 
+  "message": "商户号无法识别", 
+  "code": 10041, 
+  "dataSign": "bziyq6S/6AxvnYKsTLbNko/+ux3H7XWZ8cLHUKY6o2kwz+0rtgallGOMGT+SaZf+g3fKKx0ygdSfQm42bEfUOzrxd95zwj3zhyo+L5gAWsRYfOveFElx0M+rW7WZMLGYS+3NCemoNwg1/pNr7IpH/o9e3s+IZrGR/dXaUul9xY4=", 
+  "sign": "Hlk0hxojn3ptBpwFx2t5jMdQFyhRzb1iphY2VYHGNhD+X2Wz+/gzMPBbFVPKz4QydUJDsV1P4iFsdBZ3gwINOoMBL/BMBW/aVQexuzsazS9uguduWifXvnprNccO/t7kZZwDh+avT4n8M4L937KK+ph5nxkddbPznvIKkL5fK6E="
+}

@@ -1,0 +1,14 @@
+-------------------------------Ebay订单报送-----------------------------
+{
+  "status": 1, 
+  "code": 60000, 
+  "dataSign": "laW/WCEManEazJc4MrBZMSR3wPL7Sw4C/Lx94ixBwbOxj8gbrI5mTdFYQ7uAYlQUQlgUFGzOLOUaPrLUYgKtyIXrLdT/Ykoug4lD2tT3SooEu4qRf385jBlPqoWPC/C4PQqbSn1fZnLGfOJBkyhdgPaF2SDk3S0Tt/K5EM4eNPg=", 
+  "sign": "A/NeeeWB8kP5kgpyEJxWpd8uaKCkX5diyoR3FNbpB7I2l9GYrKAnpGU19qACcV45eTKql843zMxLzbb28LmqiA7qgeJLCaRbDfNMbycO0Mh0/zhkNEssJzStArL9pe4JZhvZUsReGYK93+U/ifWV9LcYToOveUi1laY7QuqeabY=", 
+  "message": "上送成功", 
+  "data": {
+    "merNo": "171805655366242304", 
+    "channelId": "184836678295388160", 
+    "partnerId": "170776145556545536", 
+    "channelTypeId": "104073509965275136"
+  }
+}

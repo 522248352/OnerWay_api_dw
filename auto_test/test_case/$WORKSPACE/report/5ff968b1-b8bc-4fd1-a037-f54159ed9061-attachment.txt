@@ -1,0 +1,28 @@
+-------------------------店铺查询-查询固定id的店铺------------------------------
+{
+  "status": 1, 
+  "dataSign": "UAkCK/t8UXWkar9tgc7WEKFJ/4bSQsNSLXsZhbXj6xbHvCxeN6rSQO8HbpbPDHrQma8UPlb7dGNgXo2O3ZH5koDwU0s3BMIuUs5W94pgb0bPuxcnulMIrLT+TllBlXWjlh9yLbxDghIT8wGe2LrWMhGIPaKd8kn7O1Sg+UlKiAQ=", 
+  "code": 101, 
+  "data": {
+    "count": 1, 
+    "list": [
+      {
+        "channel": {
+          "status": "0", 
+          "channelTypeId": "94245507479769088", 
+          "url": "http://www.tets.com", 
+          "channelId": "284182608722690048", 
+          "writeOffStatus": 2, 
+          "writeOffReasonRemark": "", 
+          "newChannel": false, 
+          "channelName": "欧洲", 
+          "merNo": "276944710478757888", 
+          "email": "999111@qq.com"
+        }
+      }
+    ], 
+    "merNo": "276944710478757888", 
+    "page": 1
+  }, 
+  "sign": "HQDPyLF5yBecZqcC5SHk0RvbyHQJS84r5XQiFDjXHXxiI2gU5ec711VLegbQx+ZOOx7CSbsG4X2/Jzr3x7ko8Chk7v7GaHWQ7+CDUla6LexaM5DtIkT22wuYIFz+m3dFeqvuU5S9u5Ev/OJPbSzecDvueWwXYmVpzuBNuvoalCc="
+}

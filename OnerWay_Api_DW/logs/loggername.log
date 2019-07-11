@@ -1,0 +1,4 @@
+2019-05-29 15:31:55,059 - __main__ - INFO - hello, INFO - 37
+2019-05-29 15:31:55,059 - __main__ - ERROR - ERROR logging - 39
+2019-05-29 15:31:55,059 - __main__ - WARNING - WARNING logging - 40
+2019-05-29 15:31:55,059 - __main__ - CRITICAL - CRITICAL logging - 41

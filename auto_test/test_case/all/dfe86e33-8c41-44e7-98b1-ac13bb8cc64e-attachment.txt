@@ -1,0 +1,30 @@
+----------------------------- 余额查询 -----------------------------
+{
+  "status": 1, 
+  "dataSign": "DBA2I6B8RNas5PbzfPDPGOedmIyowOj0xd/a3OP7JI+yy7rDGPGPoXfLiIX/h8mdmuplQlnwN6OZ/RlSD1/aJI0xqCiymoif/daMUvPqymcLjAY3k0snDIGw0j07AVPw1IfIHWggzgYqG3TLRqLMb97Xu6mK5dOvtNdYiqz4U0k=", 
+  "code": 11, 
+  "data": {
+    "balance": [
+      {
+        "totalBalance": 129360.0, 
+        "waitBalance": 42951.96, 
+        "freezeAmount": 120000.0, 
+        "currencyCode": "EUR", 
+        "readyBalance": 86408.04, 
+        "currencyName": "欧元", 
+        "isFreezeAllAmount": false
+      }, 
+      {
+        "totalBalance": 0.0, 
+        "waitBalance": 0.0, 
+        "freezeAmount": 0.0, 
+        "currencyCode": "USD", 
+        "readyBalance": 0.0, 
+        "currencyName": "美元", 
+        "isFreezeAllAmount": false
+      }
+    ], 
+    "merNo": "276944710478757888"
+  }, 
+  "sign": "J6RrcJk+6fPfhYBlN5Fg2LxHEVxaQwSN4IR0EcBtP+T2GkvUOpdOH68JLSrYx70XA1GY2Ptvdtz6iwFs6a8zRqp4bIULxDTa+/mmLBfapKiCnXxaeAsHchm2S7tPzrhrt6ff/UcE0i6G/f+p3GdHJngsXGJ62Lkm054////OuiA="
+}

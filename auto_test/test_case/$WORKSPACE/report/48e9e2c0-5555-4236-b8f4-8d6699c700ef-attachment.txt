@@ -1,0 +1,16 @@
+-------------------------付款转账汇率及手续费率查询-传金额------------------------------
+{
+  "status": 1, 
+  "code": 11, 
+  "dataSign": "TJRQSvqDH4MsNszv1gUSTfeBcDzD+fSMyK+nG2gyvLbBcQT2wK/9FXi3rRiONe/P943zzpO3kYsMCGhyiOUrt1+MkQWERGigjOxR3iyQ2DlndXlMuLCoEXY0U7Wr/N1C37+an4ylniO38qVVKq6YmV+KBkllXp4sfEEKxnoRnsg=", 
+  "sign": "CGFJ+EbHk65o1ttwSCN6FSIIoOYIzRpOcyoT4nr6vdcIfztxx2uzkzQOZQKLCHR1scm9v/lo7pq0C0K83F5WiE4wB//+KpYrHayAyylDysc6hprnIfHgVTnqH1b+bs+gd9q2+kgGbXY0WhOPfoATOiYG7fuiRjQ/+naAR/NrWKY=", 
+  "message": "", 
+  "data": {
+    "paymentAmount": 1000.0, 
+    "chargeFee": 11.81, 
+    "feeRate": 0.01, 
+    "rate": 1.1813, 
+    "actualPaymentAmount": 1193.11, 
+    "feeType": 0
+  }
+}

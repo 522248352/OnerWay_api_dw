@@ -1,0 +1,19 @@
+-------------------------添加提现银行卡------------------------------
+{
+  "status": 1, 
+  "code": 40001, 
+  "dataSign": "AmsqK0eSKuOQE+8A7dEt3xUpCZgfewoj4MoUGHBPBCVzIRJOxGLne25pi1bFEJztJuXhahQrlUgxMmQE/SEmFJc8FPcqWamirDRqS9OUvLvM9AdhhLBg0sy4KhX65gO9mncV0tE689tvl0cWZolr919ysHEaKjV4zDcHwINoAfQ=", 
+  "sign": "dPtkkBaa7Tt1fg5+nXEizIuA1c69oR26SFL+9zuIrg5GidRxq3yAfbDsukUlqm2+sGt/pDrYx+CDUBSfzaMGFHUO/3ZlbvlL/cFw3EVhuFd1joptgJ9hU3iprLqWfZnIOjK/cNORLDwOQ45Haf+JoakijhiMWXBOvNZcRffZS6o=", 
+  "message": "添加提现账户成功", 
+  "data": {
+    "bankAccount": "1560329917", 
+    "wdaccId": "304516188694806528", 
+    "bankName": "中国银行", 
+    "withdrawAccountCountry": "CHN", 
+    "currency": "CNY", 
+    "merNo": "276944710478757888"
+  }
+}
+<type 'list'>
+1
+304516188694806528

@@ -1,0 +1,73 @@
+----------------------------商户可用通道查询--------------------------
+{
+  "status": 1, 
+  "code": 11, 
+  "dataSign": "aSZDHk21zfT5/3aGwZ5CDrX2qUVQIJBZa2D+ES6bHdztac6qxQsPtB4vCAuGpgkrFIwXCSwAbNGjgcAF4mzT5JaNjgJciLrfo9l32wF9LZRWoNtyUX9G92XuRuMVgxGok7GP98R+jpO/EaoyPjvndYyt0bCNikiD5x9knEnDG7M=", 
+  "sign": "BJxvOJlSTjryd80tJDQK332FyA+xdo+lxsWZ0ImP8OlM5L6aogloN4FnSKIig98Ge4KenP8twi0fZm0EeME6LaKwxxQJ87mwc4jZt7ePU33/kuvijkbIHH+8xHYtim2DKxejmpzLR18dPigzeAFCqR5ZSzaGon97Nx7yJW8uzdE=", 
+  "message": "", 
+  "data": {
+    "count": 9, 
+    "list": [
+      {
+        "currency": "CNY,EUR,GBP,JPY,USD", 
+        "channelTypeName": "独立站点", 
+        "channelTypeTag": "Alone", 
+        "channelTypeId": "242912519121936384"
+      }, 
+      {
+        "currency": "USD", 
+        "newAmazonShopCount": 2, 
+        "channelTypeName": "亚马逊印度站", 
+        "channelTypeTag": "amazon_in", 
+        "channelTypeId": "207346545249624064"
+      }, 
+      {
+        "currency": "JPY", 
+        "channelTypeName": "Yahoo拍拍", 
+        "channelTypeTag": "Yahoo", 
+        "channelTypeId": "192526641363296256"
+      }, 
+      {
+        "currency": "CNY,EUR,GBP,JPY,USD", 
+        "newAmazonShopCount": 2, 
+        "channelTypeName": "亚马逊日本站", 
+        "channelTypeTag": "amazon_jp", 
+        "channelTypeId": "175785906312192000"
+      }, 
+      {
+        "currency": "CNY,USD", 
+        "channelTypeName": "Walmart", 
+        "channelTypeTag": "Walmart", 
+        "channelTypeId": "109521626009313280"
+      }, 
+      {
+        "currency": "EUR,GBP,USD", 
+        "channelTypeName": "ebay", 
+        "channelTypeTag": "ebay", 
+        "channelTypeId": "104073509965275136"
+      }, 
+      {
+        "currency": "EUR,GBP,JPY,USD", 
+        "newAmazonShopCount": 2, 
+        "channelTypeName": "亚马逊欧洲", 
+        "channelTypeTag": "amazon_eu", 
+        "channelTypeId": "94245507479769088"
+      }, 
+      {
+        "currency": "CNY,EUR,GBP,JPY,USD", 
+        "newAmazonShopCount": 2, 
+        "channelTypeName": "亚马逊美国站", 
+        "channelTypeTag": "amazon_us", 
+        "channelTypeId": "18134904579690496"
+      }, 
+      {
+        "currency": "EUR,GBP,JPY,USD", 
+        "channelTypeName": "wish", 
+        "channelTypeTag": "wish", 
+        "channelTypeId": "18134904579690495"
+      }
+    ], 
+    "merNo": "276944710478757888"
+  }
+}
+11

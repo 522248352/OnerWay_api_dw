@@ -1,0 +1,8 @@
+-------------------------提现银行账号-删除------------------------------
+282030731750965248
+{
+  "status": 1, 
+  "message": "提现账户282030731750965248删除成功", 
+  "code": 40015, 
+  "sign": "IKXS91AmTYGHimVvmkQAEIyb2wVZMKiA9N2DHGgK8RtlLEJNsfxOruQFKJT3hR7p12YVYuM5PSN2XgUDvwLATd3fMjiKF9DouOxOokGVFW4xKgGnyt/s2fkrcXOz10dVZzToR02UeHOiOkYR4j7K2TSOPBHSIfGX3DwHQrXg3t8="
+}

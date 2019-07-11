@@ -1,0 +1,19 @@
+-------------------------转账申请------------------------------
+{
+  "status": 1, 
+  "dataSign": "DgD9m/dnTy9D6/+v/8Aq3Ms0mO+U5AXe7oBRvd8KFJjjzmbwlDHL7kPuENVgBcs09F44WaVWiZGq9+XVg0UkZnGVh96bsQVkN+40JLYyrNU2eTIRruJbw4YBJQU9FLdR7rkxISb67FHhJwJLTYUd90Ip8VD9Ir4+7j9U3pH8c2I=", 
+  "code": 101, 
+  "data": {
+    "chargeFee": 11.81, 
+    "paymentType": 0, 
+    "rate": 1.1813, 
+    "partnerId": "170776145556545536", 
+    "time": "1560328827698", 
+    "paymentCurrency": "EUR", 
+    "transactionId": "304511615917785089", 
+    "actualPaymentAmount": 1193.11, 
+    "merNo": "276944710478757888"
+  }, 
+  "sign": "PQahCLPpRcs0ZV3Q4wE0gjXwy5Vqy9MhZ46LpeL7lAPIq50PQljESC4yQLAtZRehGKAsLy9Ht7bYJSjwgoTeCrER175LIDPG1+Z7Lxfls+jJAtuQLUNacEg6eWbBV7bnPzUDolNiPnXcuRqxGrKLlT1hscGxC3TOT75zZUvboX4="
+}
+304511615917785089

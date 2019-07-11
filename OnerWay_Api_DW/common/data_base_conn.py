@@ -28,11 +28,12 @@ class Data_Base_Conn(object):
 
         try:
             course.execute(sql)
-            conns.commit()
+
         except Exception as e:
             print("执行异常")
 
         else:
+            conns.commit()
             rows = course.fetchall()
             return rows
         course.close()

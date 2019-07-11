@@ -1,0 +1,198 @@
+-------------------------转账查询------------------------------
+{
+  "status": 1, 
+  "dataSign": "L3BHAP1JczInisGTeQP/Iqd879V56dv/Q6QkAdxB1LedzmROpvP4aoy9jZvzLlXdSnmoi8pmQHnKXi1P8tr/hWbO6d+6GW7dtKbB1mhXZewuthEB6GzfYcxnpDrTq6mvwyuvyPWdmkLiB3yMRriANQCgCJyvVhk4wscPkTV1uYQ=", 
+  "code": 11, 
+  "data": {
+    "count": 53, 
+    "merNo": "276944710478757888", 
+    "list": [
+      {
+        "status": 0, 
+        "payCurrencyCode": "EUR", 
+        "paymentAmount": 1000.0, 
+        "chargeFee": 11.81, 
+        "receiptCurrencyCode": "GBP", 
+        "rate": 1.1813, 
+        "apiInfo": {
+          "Payee bank name": "payyname", 
+          "Payee": "payee", 
+          "Recipient Address": "address", 
+          "IBAN": "iban", 
+          "BIC": "bic"
+        }, 
+        "transactionId": "304516187902083073", 
+        "actualPaymentAmount": 1193.11, 
+        "vatNumber": "2"
+      }, 
+      {
+        "status": 0, 
+        "payCurrencyCode": "EUR", 
+        "paymentAmount": 1000.0, 
+        "chargeFee": 11.81, 
+        "receiptCurrencyCode": "GBP", 
+        "rate": 1.1813, 
+        "apiInfo": {
+          "Payee bank name": "payyname", 
+          "Payee": "payee", 
+          "Recipient Address": "address", 
+          "IBAN": "iban", 
+          "BIC": "bic"
+        }, 
+        "transactionId": "304514725688016897", 
+        "actualPaymentAmount": 1193.11, 
+        "vatNumber": "2"
+      }, 
+      {
+        "status": 0, 
+        "payCurrencyCode": "EUR", 
+        "paymentAmount": 1000.0, 
+        "chargeFee": 11.81, 
+        "receiptCurrencyCode": "GBP", 
+        "rate": 1.1813, 
+        "apiInfo": {
+          "Payee bank name": "payyname", 
+          "Payee": "payee", 
+          "Recipient Address": "address", 
+          "IBAN": "iban", 
+          "BIC": "bic"
+        }, 
+        "transactionId": "304514255909191681", 
+        "actualPaymentAmount": 1193.11, 
+        "vatNumber": "2"
+      }, 
+      {
+        "status": 0, 
+        "payCurrencyCode": "EUR", 
+        "paymentAmount": 1000.0, 
+        "chargeFee": 11.81, 
+        "receiptCurrencyCode": "GBP", 
+        "rate": 1.1813, 
+        "apiInfo": {
+          "Payee bank name": "payyname", 
+          "Payee": "payee", 
+          "Recipient Address": "address", 
+          "IBAN": "iban", 
+          "BIC": "bic"
+        }, 
+        "transactionId": "304513954598780929", 
+        "actualPaymentAmount": 1193.11, 
+        "vatNumber": "2"
+      }, 
+      {
+        "status": 0, 
+        "payCurrencyCode": "EUR", 
+        "paymentAmount": 1000.0, 
+        "chargeFee": 11.81, 
+        "receiptCurrencyCode": "GBP", 
+        "rate": 1.1813, 
+        "apiInfo": {
+          "Payee bank name": "payyname", 
+          "Payee": "payee", 
+          "Recipient Address": "address", 
+          "IBAN": "iban", 
+          "BIC": "bic"
+        }, 
+        "transactionId": "304513418688364545", 
+        "actualPaymentAmount": 1193.11, 
+        "vatNumber": "2"
+      }, 
+      {
+        "status": 0, 
+        "payCurrencyCode": "EUR", 
+        "paymentAmount": 1000.0, 
+        "chargeFee": 11.81, 
+        "receiptCurrencyCode": "GBP", 
+        "rate": 1.1813, 
+        "apiInfo": {
+          "Payee bank name": "payyname", 
+          "Payee": "payee", 
+          "Recipient Address": "address", 
+          "IBAN": "iban", 
+          "BIC": "bic"
+        }, 
+        "transactionId": "304513012306444289", 
+        "actualPaymentAmount": 1193.11, 
+        "vatNumber": "2"
+      }, 
+      {
+        "status": 0, 
+        "payCurrencyCode": "EUR", 
+        "paymentAmount": 1000.0, 
+        "chargeFee": 11.81, 
+        "receiptCurrencyCode": "GBP", 
+        "rate": 1.1813, 
+        "apiInfo": {
+          "Payee bank name": "payyname", 
+          "Payee": "payee", 
+          "Recipient Address": "address", 
+          "IBAN": "iban", 
+          "BIC": "bic"
+        }, 
+        "transactionId": "304511615917785089", 
+        "actualPaymentAmount": 1193.11, 
+        "vatNumber": "2"
+      }, 
+      {
+        "status": 0, 
+        "payCurrencyCode": "EUR", 
+        "paymentAmount": 1000.0, 
+        "chargeFee": 11.81, 
+        "receiptCurrencyCode": "GBP", 
+        "rate": 1.1813, 
+        "apiInfo": {
+          "Payee bank name": "payyname", 
+          "Payee": "payee", 
+          "Recipient Address": "address", 
+          "IBAN": "iban", 
+          "BIC": "bic"
+        }, 
+        "transactionId": "304510203955675137", 
+        "actualPaymentAmount": 1193.11, 
+        "vatNumber": "2"
+      }, 
+      {
+        "status": 0, 
+        "payCurrencyCode": "EUR", 
+        "paymentAmount": 1000.0, 
+        "chargeFee": 11.81, 
+        "receiptCurrencyCode": "GBP", 
+        "rate": 1.1813, 
+        "apiInfo": {
+          "Payee bank name": "payyname", 
+          "Payee": "payee", 
+          "Recipient Address": "address", 
+          "IBAN": "iban", 
+          "BIC": "bic"
+        }, 
+        "transactionId": "304509610939809793", 
+        "actualPaymentAmount": 1193.11, 
+        "vatNumber": "2"
+      }, 
+      {
+        "status": 0, 
+        "payCurrencyCode": "EUR", 
+        "paymentAmount": 1000.0, 
+        "chargeFee": 11.81, 
+        "receiptCurrencyCode": "GBP", 
+        "rate": 1.1813, 
+        "apiInfo": {
+          "Payee bank name": "payyname", 
+          "Payee": "payee", 
+          "Recipient Address": "address", 
+          "IBAN": "iban", 
+          "BIC": "bic"
+        }, 
+        "transactionId": "304508927792545793", 
+        "actualPaymentAmount": 1193.11, 
+        "vatNumber": "2"
+      }
+    ], 
+    "page": 1
+  }, 
+  "sign": "Ssjc0mOHgaEzLPcAoqDAn2u54mcWTz0vB44eLJi6GO5R8P4PAGRLSWSv5cKmJkVVJgNsRHQEiG28hQvHcHxOfWZCX65gkLE9R56H374h/Xxwis1BlXw61xD6L4byDRC6cUsa2ReqwR4cvc38HEVrrveouFHqnlRd1aWeNqMTUV8="
+}
+277293641171632128
+277297060351475712
+277297765262983168
+277297765262983168

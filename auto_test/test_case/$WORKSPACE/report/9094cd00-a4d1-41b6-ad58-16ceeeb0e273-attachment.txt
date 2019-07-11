@@ -1,0 +1,25 @@
+-------------------------账户查询------------------------------
+{
+  "status": 1, 
+  "dataSign": "RMIafmQjj41yrtQyDaPCR3E0FRfKRPudY1MS/nXcb81oFp0JTc6a+PSNNjAVHGeWLNhFoYOagAiY8FO7/+GvpEcnZkmA8b7E7zqsG/x0uOKi0FkGo/p74r5Eeh13dw7ENxcdNtquzn3WvAQ/+0g5pPLDkeARguAaiJL5XUVzz6o=", 
+  "code": 101, 
+  "data": {
+    "province": "上海", 
+    "city": "上海", 
+    "businessNumber": "324535", 
+    "name": "企业法人", 
+    "business": "276944699363852288", 
+    "area": "中国", 
+    "country": "中国", 
+    "idCard": "324535896525145234", 
+    "idCardImg1": "276944699363852288", 
+    "idCardImg2": "276944699363852288", 
+    "partnerId": "170776145556545536", 
+    "accountType": "1", 
+    "address": "上海市上海", 
+    "merName": "自动化api", 
+    "merStatus": 1, 
+    "merNo": "276944710478757888"
+  }, 
+  "sign": "VK47n1sAXYR6V/uM5a2FHOp0pcxumZxMAy9lr95jl1OhOhTQl/uK7bS6ShrzNMBC7C8oI0OWhoS2V458b7QmI0fnGACMmtx1wJfkZslqleLZYpnhAWDHZGjurnRAnSH7SQlwoLqgq2OC0GxVQQWHzkc2xBFXAiaCPtlrBzQ4bdA="
+}

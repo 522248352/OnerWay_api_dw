@@ -1,0 +1,1616 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>Test Report</title>
+    <style>body {
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 12px;
+	min-width: 1200px;
+	color: #999;
+}
+
+h1 {
+	font-size: 24px;
+	color: black;
+}
+
+h2 {
+	font-size: 16px;
+	color: black;
+}
+
+p {
+    color: black;
+}
+
+a {
+	color: #999;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+/******************************
+ * SUMMARY INFORMATION
+ ******************************/
+
+#environment td {
+	padding: 5px;
+	border: 1px solid #E6E6E6;
+}
+
+#environment tr:nth-child(odd) {
+	background-color: #f6f6f6;
+}
+
+/******************************
+ * TEST RESULT COLORS
+ ******************************/
+span.passed, .passed .col-result {
+	color: green;
+}
+span.skipped, span.xfailed, span.rerun, .skipped .col-result, .xfailed .col-result, .rerun .col-result {
+	color: orange;
+}
+span.error, span.failed, span.xpassed, .error .col-result, .failed .col-result, .xpassed .col-result  {
+	color: red;
+}
+
+
+/******************************
+ * RESULTS TABLE
+ *
+ * 1. Table Layout
+ * 2. Extra
+ * 3. Sorting items
+ *
+ ******************************/
+
+/*------------------
+ * 1. Table Layout
+ *------------------*/
+
+#results-table {
+	border: 1px solid #e6e6e6;
+	color: #999;
+	font-size: 12px;
+	width: 100%
+}
+
+#results-table th, #results-table td {
+	padding: 5px;
+	border: 1px solid #E6E6E6;
+	text-align: left
+}
+#results-table th {
+	font-weight: bold
+}
+
+/*------------------
+ * 2. Extra
+ *------------------*/
+
+.log:only-child {
+	height: inherit
+}
+.log {
+	background-color: #e6e6e6;
+	border: 1px solid #e6e6e6;
+	color: black;
+	display: block;
+	font-family: "Courier New", Courier, monospace;
+	height: 230px;
+	overflow-y: scroll;
+	padding: 5px;
+	white-space: pre-wrap
+}
+div.image {
+	border: 1px solid #e6e6e6;
+	float: right;
+	height: 240px;
+	margin-left: 5px;
+	overflow: hidden;
+	width: 320px
+}
+div.image img {
+	width: 320px
+}
+.collapsed {
+	display: none;
+}
+.expander::after {
+	content: " (show details)";
+	color: #BBB;
+	font-style: italic;
+	cursor: pointer;
+}
+.collapser::after {
+	content: " (hide details)";
+	color: #BBB;
+	font-style: italic;
+	cursor: pointer;
+}
+
+/*------------------
+ * 3. Sorting items
+ *------------------*/
+.sortable {
+	cursor: pointer;
+}
+
+.sort-icon {
+	font-size: 0px;
+	float: left;
+	margin-right: 5px;
+	margin-top: 5px;
+	/*triangle*/
+	width: 0;
+	height: 0;
+	border-left: 8px solid transparent;
+	border-right: 8px solid transparent;
+}
+
+.inactive .sort-icon {
+	/*finish triangle*/
+	border-top: 8px solid #E6E6E6;
+}
+
+.asc.active .sort-icon {
+	/*finish triangle*/
+	border-bottom: 8px solid #999;
+}
+
+.desc.active .sort-icon {
+	/*finish triangle*/
+	border-top: 8px solid #999;
+}
+</style></head>
+  <body onLoad="init()">
+    <script>/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this file,
+ * You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+
+function toArray(iter) {
+    if (iter === null) {
+        return null;
+    }
+    return Array.prototype.slice.call(iter);
+}
+
+function find(selector, elem) {
+    if (!elem) {
+        elem = document;
+    }
+    return elem.querySelector(selector);
+}
+
+function find_all(selector, elem) {
+    if (!elem) {
+        elem = document;
+    }
+    return toArray(elem.querySelectorAll(selector));
+}
+
+function sort_column(elem) {
+    toggle_sort_states(elem);
+    var colIndex = toArray(elem.parentNode.childNodes).indexOf(elem);
+    var key;
+    if (elem.classList.contains('numeric')) {
+        key = key_num;
+    } else if (elem.classList.contains('result')) {
+        key = key_result;
+    } else {
+        key = key_alpha;
+    }
+    sort_table(elem, key(colIndex));
+}
+
+function show_all_extras() {
+    find_all('.col-result').forEach(show_extras);
+}
+
+function hide_all_extras() {
+    find_all('.col-result').forEach(hide_extras);
+}
+
+function show_extras(colresult_elem) {
+    var extras = colresult_elem.parentNode.nextElementSibling;
+    var expandcollapse = colresult_elem.firstElementChild;
+    extras.classList.remove("collapsed");
+    expandcollapse.classList.remove("expander");
+    expandcollapse.classList.add("collapser");
+}
+
+function hide_extras(colresult_elem) {
+    var extras = colresult_elem.parentNode.nextElementSibling;
+    var expandcollapse = colresult_elem.firstElementChild;
+    extras.classList.add("collapsed");
+    expandcollapse.classList.remove("collapser");
+    expandcollapse.classList.add("expander");
+}
+
+function show_filters() {
+    var filter_items = document.getElementsByClassName('filter');
+    for (var i = 0; i < filter_items.length; i++)
+        filter_items[i].hidden = false;
+}
+
+function add_collapse() {
+    // Add links for show/hide all
+    var resulttable = find('table#results-table');
+    var showhideall = document.createElement("p");
+    showhideall.innerHTML = '<a href="javascript:show_all_extras()">Show all details</a> / ' +
+                            '<a href="javascript:hide_all_extras()">Hide all details</a>';
+    resulttable.parentElement.insertBefore(showhideall, resulttable);
+
+    // Add show/hide link to each result
+    find_all('.col-result').forEach(function(elem) {
+        var collapsed = get_query_parameter('collapsed') || 'Passed';
+        var extras = elem.parentNode.nextElementSibling;
+        var expandcollapse = document.createElement("span");
+        if (collapsed.includes(elem.innerHTML)) {
+            extras.classList.add("collapsed");
+            expandcollapse.classList.add("expander");
+        } else {
+            expandcollapse.classList.add("collapser");
+        }
+        elem.appendChild(expandcollapse);
+
+        elem.addEventListener("click", function(event) {
+            if (event.currentTarget.parentNode.nextElementSibling.classList.contains("collapsed")) {
+                show_extras(event.currentTarget);
+            } else {
+                hide_extras(event.currentTarget);
+            }
+        });
+    })
+}
+
+function get_query_parameter(name) {
+    var match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
+    return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
+}
+
+function init () {
+    reset_sort_headers();
+
+    add_collapse();
+
+    show_filters();
+
+    toggle_sort_states(find('.initial-sort'));
+
+    find_all('.sortable').forEach(function(elem) {
+        elem.addEventListener("click",
+                              function(event) {
+                                  sort_column(elem);
+                              }, false)
+    });
+
+};
+
+function sort_table(clicked, key_func) {
+    var rows = find_all('.results-table-row');
+    var reversed = !clicked.classList.contains('asc');
+    var sorted_rows = sort(rows, key_func, reversed);
+    /* Whole table is removed here because browsers acts much slower
+     * when appending existing elements.
+     */
+    var thead = document.getElementById("results-table-head");
+    document.getElementById('results-table').remove();
+    var parent = document.createElement("table");
+    parent.id = "results-table";
+    parent.appendChild(thead);
+    sorted_rows.forEach(function(elem) {
+        parent.appendChild(elem);
+    });
+    document.getElementsByTagName("BODY")[0].appendChild(parent);
+}
+
+function sort(items, key_func, reversed) {
+    var sort_array = items.map(function(item, i) {
+        return [key_func(item), i];
+    });
+    var multiplier = reversed ? -1 : 1;
+
+    sort_array.sort(function(a, b) {
+        var key_a = a[0];
+        var key_b = b[0];
+        return multiplier * (key_a >= key_b ? 1 : -1);
+    });
+
+    return sort_array.map(function(item) {
+        var index = item[1];
+        return items[index];
+    });
+}
+
+function key_alpha(col_index) {
+    return function(elem) {
+        return elem.childNodes[1].childNodes[col_index].firstChild.data.toLowerCase();
+    };
+}
+
+function key_num(col_index) {
+    return function(elem) {
+        return parseFloat(elem.childNodes[1].childNodes[col_index].firstChild.data);
+    };
+}
+
+function key_result(col_index) {
+    return function(elem) {
+        var strings = ['Error', 'Failed', 'Rerun', 'XFailed', 'XPassed',
+                       'Skipped', 'Passed'];
+        return strings.indexOf(elem.childNodes[1].childNodes[col_index].firstChild.data);
+    };
+}
+
+function reset_sort_headers() {
+    find_all('.sort-icon').forEach(function(elem) {
+        elem.parentNode.removeChild(elem);
+    });
+    find_all('.sortable').forEach(function(elem) {
+        var icon = document.createElement("div");
+        icon.className = "sort-icon";
+        icon.textContent = "vvv";
+        elem.insertBefore(icon, elem.firstChild);
+        elem.classList.remove("desc", "active");
+        elem.classList.add("asc", "inactive");
+    });
+}
+
+function toggle_sort_states(elem) {
+    //if active, toggle between asc and desc
+    if (elem.classList.contains('active')) {
+        elem.classList.toggle('asc');
+        elem.classList.toggle('desc');
+    }
+
+    //if inactive, reset all other functions and add ascending active
+    if (elem.classList.contains('inactive')) {
+        reset_sort_headers();
+        elem.classList.remove('inactive');
+        elem.classList.add('active');
+    }
+}
+
+function is_all_rows_hidden(value) {
+  return value.hidden == false;
+}
+
+function filter_table(elem) {
+    var outcome_att = "data-test-result";
+    var outcome = elem.getAttribute(outcome_att);
+    class_outcome = outcome + " results-table-row";
+    var outcome_rows = document.getElementsByClassName(class_outcome);
+
+    for(var i = 0; i < outcome_rows.length; i++){
+        outcome_rows[i].hidden = !elem.checked;
+    }
+
+    var rows = find_all('.results-table-row').filter(is_all_rows_hidden);
+    var all_rows_hidden = rows.length == 0 ? true : false;
+    var not_found_message = document.getElementById("not-found-message");
+    not_found_message.hidden = !all_rows_hidden;
+}
+</script>
+    <h1>reports2.html</h1>
+    <p>Report generated on 30-Apr-2019 at 14:46:20 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v1.20.0</p>
+    <h2>Environment</h2>
+    <table id="environment">
+      <tr>
+        <td>JAVA_HOME</td>
+        <td>D:\Java\jdk1.8.0_161</td></tr>
+      <tr>
+        <td>Packages</td>
+        <td>{&apos;py&apos;: &apos;1.8.0&apos;, &apos;pytest&apos;: &apos;4.4.1&apos;, &apos;pluggy&apos;: &apos;0.9.0&apos;}</td></tr>
+      <tr>
+        <td>Platform</td>
+        <td>Windows-10-10.0.17763</td></tr>
+      <tr>
+        <td>Plugins</td>
+        <td>{&apos;rerunfailures&apos;: &apos;7.0&apos;, &apos;metadata&apos;: &apos;1.8.0&apos;, &apos;html&apos;: &apos;1.20.0&apos;, &apos;allure-pytest&apos;: &apos;2.6.0&apos;, &apos;sugar&apos;: &apos;0.9.2&apos;}</td></tr>
+      <tr>
+        <td>Python</td>
+        <td>2.7.15</td></tr></table>
+    <h2>Summary</h2>
+    <p>23 tests ran in 3.10 seconds. </p>
+    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="passed">22 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="failed">1 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>, <input checked="true" class="filter" data-test-result="rerun" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="rerun">1 rerun</span>
+    <h2>Results</h2>
+    <table id="results-table">
+      <thead id="results-table-head">
+        <tr>
+          <th class="sortable result initial-sort" col="result">Result</th>
+          <th class="sortable" col="name">Test</th>
+          <th class="sortable numeric" col="duration">Duration</th>
+          <th>Links</th></tr>
+        <tr hidden="true" id="not-found-message">
+          <th colspan="4">No results found. Try to check the filters</th></tr></thead>
+      <tbody class="failed results-table-row">
+        <tr>
+          <td class="col-result">Failed</td>
+          <td class="col-name">ss/test_aa.py::test_shou_kuan_cu</td>
+          <td class="col-duration">0.02</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">def test_shou_kuan_cu():<br/>        pas = "/channel/addChannelCurrency.htm"<br/>        pams = {"partnerId": global_parameter.PARTNERID,<br/>                "merNo": global_parameter.MERNO_NO_USERID,<br/>                "channelTypeId": 94245507479769088,<br/>                "channelId": 288832971870470144,<br/>                "currency": "GBP"}<br/>    <br/>        r_obj = public_request.Public_Request()<br/>        r_resu = r_obj.public_request(pas=pas, parameters=pams)<br/>    <br/>        print(json.dumps(r_resu.json(), indent=2, ensure_ascii=False, sort_keys=False))<br/>&gt;       assert r_resu.json()["status"] == 1<br/><span class="error">E       assert 0 == 1</span><br/><br/>ss\test_aa.py:54: AssertionError<br/>----------------------------- Captured stdout call -----------------------------<br/>{
+  "status": 0, 
+  "code": 20017, 
+  "dataSign": "GpYEP/s9VSUY7saUDkziJrRZLV7tgHBDAqbsq/0IUYETthkIWP1gHMSfjUgIkdMhprj0L9rULSfUT062HvF3bpmn4hn7eW0xqeCi56YIUkr24s+WK2asX5F5TlvM2InyQF8vcdWSFXEVzXAajjGNTnPfGAViR2g4trViB70qf7E=", 
+  "sign": "keHwgFpn9BC6H0YlRfWeAwDyv6CS4PVAWtG5AFCDJgTjHtw2l/W+wWmyO8EkqDbowxre7xwsgKfwK41+LaD8F0TKPlKwIUW/p51qGYoWO2t/KbAnorezDDib2/K8Ou/f3/iNSR0EUiDBqRZE51n0yE5MEh3GaaA0/Yy3dVmO3uQ=", 
+  "message": "店铺已注销", 
+  "data": {
+    "channelId": "288832971870470144"
+  }
+}
+----------------------------- Captured stdout call -----------------------------<br/>{
+  "status": 0, 
+  "code": 20017, 
+  "dataSign": "GpYEP/s9VSUY7saUDkziJrRZLV7tgHBDAqbsq/0IUYETthkIWP1gHMSfjUgIkdMhprj0L9rULSfUT062HvF3bpmn4hn7eW0xqeCi56YIUkr24s+WK2asX5F5TlvM2InyQF8vcdWSFXEVzXAajjGNTnPfGAViR2g4trViB70qf7E=", 
+  "sign": "keHwgFpn9BC6H0YlRfWeAwDyv6CS4PVAWtG5AFCDJgTjHtw2l/W+wWmyO8EkqDbowxre7xwsgKfwK41+LaD8F0TKPlKwIUW/p51qGYoWO2t/KbAnorezDDib2/K8Ou/f3/iNSR0EUiDBqRZE51n0yE5MEh3GaaA0/Yy3dVmO3uQ=", 
+  "message": "店铺已注销", 
+  "data": {
+    "channelId": "288832971870470144"
+  }
+}
+</div></td></tr></tbody>
+      <tbody class="rerun results-table-row">
+        <tr>
+          <td class="col-result">Rerun</td>
+          <td class="col-name">ss/test_aa.py::test_shou_kuan_cu</td>
+          <td class="col-duration">0.05</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">def test_shou_kuan_cu():<br/>        pas = "/channel/addChannelCurrency.htm"<br/>        pams = {"partnerId": global_parameter.PARTNERID,<br/>                "merNo": global_parameter.MERNO_NO_USERID,<br/>                "channelTypeId": 94245507479769088,<br/>                "channelId": 288832971870470144,<br/>                "currency": "GBP"}<br/>    <br/>        r_obj = public_request.Public_Request()<br/>        r_resu = r_obj.public_request(pas=pas, parameters=pams)<br/>    <br/>        print(json.dumps(r_resu.json(), indent=2, ensure_ascii=False, sort_keys=False))<br/>&gt;       assert r_resu.json()["status"] == 1<br/><span class="error">E       assert 0 == 1</span><br/><br/>ss\test_aa.py:54: AssertionError<br/>----------------------------- Captured stdout call -----------------------------<br/>{
+  "status": 0, 
+  "code": 20017, 
+  "dataSign": "GpYEP/s9VSUY7saUDkziJrRZLV7tgHBDAqbsq/0IUYETthkIWP1gHMSfjUgIkdMhprj0L9rULSfUT062HvF3bpmn4hn7eW0xqeCi56YIUkr24s+WK2asX5F5TlvM2InyQF8vcdWSFXEVzXAajjGNTnPfGAViR2g4trViB70qf7E=", 
+  "sign": "keHwgFpn9BC6H0YlRfWeAwDyv6CS4PVAWtG5AFCDJgTjHtw2l/W+wWmyO8EkqDbowxre7xwsgKfwK41+LaD8F0TKPlKwIUW/p51qGYoWO2t/KbAnorezDDib2/K8Ou/f3/iNSR0EUiDBqRZE51n0yE5MEh3GaaA0/Yy3dVmO3uQ=", 
+  "message": "店铺已注销", 
+  "data": {
+    "channelId": "288832971870470144"
+  }
+}
+</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">ss/test_aa.py::test_add_shop_EU</td>
+          <td class="col-duration">0.43</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">----------------------------- Captured stdout call -----------------------------<br/>{
+  "status": 1, 
+  "code": 20002, 
+  "dataSign": "lFBsRvJHy4FcZJ/K6z8JUkQYhyTAMiZWW7UDPGdwLMDfB5M6BQP+IUgrKyuPyS4bBEMM6UlAVmRqnOr5VVvZjzYvppE59WG0RJNfROXnbsDrg4D6KtaC5kStWQnMG4WtD3BpPx9SxWW2f2X37DqFOo9NeyDdCfyMq+tskUH1Ht4=", 
+  "sign": "I3B/dpltUk74y2jq3PVJ2BTREV1ZLU/BqTr2nTeH10LYZ1GovAfxQxcQHRo8L6BM8roasjl03b2pl3xJi2AfQD0oC4/xAjouBpkJTn65kcBSrlC7e32/vcrstPUYw/fstUnPYEOnFtJnzjUwb40B6QedBIuSrFNCfBPW6dwCYlo=", 
+  "message": "添加店铺成功", 
+  "data": {
+    "status": 0, 
+    "channelId": "288900207184347136", 
+    "auditId": "", 
+    "channelType": "94245507479769088", 
+    "channelName": "0430EUR1556606777", 
+    "merNo": "276944710478757888"
+  }
+}
+['D:\\eclipse-workspace\\Tests', 'D:\\Python27\\Scripts\\pytest.exe', 'C:\\WINDOWS\\SYSTEM32\\python27.zip', 'd:\\python27\\DLLs', 'd:\\python27\\lib', 'd:\\python27\\lib\\plat-win', 'd:\\python27\\lib\\lib-tk', 'd:\\python27', 'd:\\python27\\lib\\site-packages', 'd:\\python27\\lib\\site-packages\\selenium-3.141.0-py2.7.egg', 'd:\\python27\\lib\\site-packages\\urllib3-1.24.1-py2.7.egg', 'D:\\eclipse-workspace\\Tests\\Api_TestCase', '../', 'D:\\eclipse-workspace\\Tests\\Api_TestCase']
+</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_case/test_case_api.py::test_cash_account_enquiry</td>
+          <td class="col-duration">0.08</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">----------------------------- Captured stdout call -----------------------------<br/>----------------------------提现账户查询--------------------------
+{
+  "status": 1, 
+  "dataSign": "eIKgQZbQsnKxXfom2wbOTxakIc9axF/GvX1KJQIibCKVR/EcqkMb8iD2q7dOTR/ItBC3GEDjiK7Tvu17qeuiTFaUCrUYf3dejSOUzy6UrPJ4BCPRFy4a1LvCyPN+gSZOlh3F5hd2Ujrju6ey/P84VLfT5izjPB/zUIhan+qmHCE=", 
+  "code": 101, 
+  "data": {
+    "count": 10, 
+    "list": [
+      {
+        "bankAccount": "1554201941", 
+        "wdaccId": "278813596413231104", 
+        "accountType": 0, 
+        "bankName": "中国银行", 
+        "auditStatus": 0, 
+        "currencyCode": "CNY", 
+        "accountName": "自动化api", 
+        "branchBankName": "开户支行名称", 
+        "contactName": "自动化api", 
+        "contactPhone": "13055226325", 
+        "phoneCode": "+86", 
+        "branchAddr": "开户支行地址", 
+        "merNo": "276944710478757888"
+      }, 
+      {
+        "bankAccount": "1554877940", 
+        "wdaccId": "281648942847000576", 
+        "accountType": 0, 
+        "bankName": "中国银行", 
+        "auditStatus": 0, 
+        "currencyCode": "CNY", 
+        "accountName": "自动化api", 
+        "branchBankName": "开户支行名称", 
+        "contactName": "自动化api", 
+        "contactPhone": "13055226325", 
+        "phoneCode": "+86", 
+        "branchAddr": "开户支行地址", 
+        "merNo": "276944710478757888"
+      }, 
+      {
+        "bankAccount": "1554961588", 
+        "wdaccId": "281999792639475712", 
+        "accountType": 0, 
+        "bankName": "中国银行", 
+        "auditStatus": 0, 
+        "currencyCode": "CNY", 
+        "accountName": "自动化api", 
+        "branchBankName": "开户支行名称", 
+        "contactName": "自动化api", 
+        "contactPhone": "13055226325", 
+        "phoneCode": "+86", 
+        "branchAddr": "开户支行地址", 
+        "merNo": "276944710478757888"
+      }, 
+      {
+        "bankAccount": "1554962139", 
+        "wdaccId": "282002100068712448", 
+        "accountType": 0, 
+        "bankName": "中国银行", 
+        "auditStatus": 0, 
+        "currencyCode": "CNY", 
+        "accountName": "自动化api", 
+        "branchBankName": "开户支行名称", 
+        "contactName": "自动化api", 
+        "contactPhone": "13055226325", 
+        "phoneCode": "+86", 
+        "branchAddr": "开户支行地址", 
+        "merNo": "276944710478757888"
+      }, 
+      {
+        "bankAccount": "1554962150", 
+        "wdaccId": "282002146394800128", 
+        "accountType": 0, 
+        "bankName": "中国银行", 
+        "auditStatus": 0, 
+        "currencyCode": "CNY", 
+        "accountName": "自动化api", 
+        "branchBankName": "开户支行名称", 
+        "contactName": "自动化api", 
+        "contactPhone": "13055226325", 
+        "phoneCode": "+86", 
+        "branchAddr": "开户支行地址", 
+        "merNo": "276944710478757888"
+      }, 
+      {
+        "bankAccount": "1554962327", 
+        "wdaccId": "282002892536315904", 
+        "accountType": 0, 
+        "bankName": "中国银行", 
+        "auditStatus": 0, 
+        "currencyCode": "CNY", 
+        "accountName": "自动化api", 
+        "branchBankName": "开户支行名称", 
+        "contactName": "自动化api", 
+        "contactPhone": "13055226325", 
+        "phoneCode": "+86", 
+        "branchAddr": "开户支行地址", 
+        "merNo": "276944710478757888"
+      }, 
+      {
+        "bankAccount": "1554962328", 
+        "wdaccId": "282002892951552000", 
+        "accountType": 0, 
+        "bankName": "中国银行", 
+        "auditStatus": 0, 
+        "currencyCode": "CNY", 
+        "accountName": "自动化api", 
+        "branchBankName": "开户支行名称", 
+        "contactName": "自动化api", 
+        "contactPhone": "13055226325", 
+        "phoneCode": "+86", 
+        "branchAddr": "开户支行地址", 
+        "merNo": "276944710478757888"
+      }, 
+      {
+        "bankAccount": "1554964797", 
+        "wdaccId": "282013251833856000", 
+        "accountType": 0, 
+        "bankName": "中国银行", 
+        "auditStatus": 0, 
+        "currencyCode": "CNY", 
+        "accountName": "自动化api", 
+        "branchBankName": "开户支行名称", 
+        "contactName": "自动化api", 
+        "contactPhone": "13055226325", 
+        "phoneCode": "+86", 
+        "branchAddr": "开户支行地址", 
+        "merNo": "276944710478757888"
+      }, 
+      {
+        "bankAccount": "1554964798", 
+        "wdaccId": "282013252211343360", 
+        "accountType": 0, 
+        "bankName": "中国银行", 
+        "auditStatus": 0, 
+        "currencyCode": "CNY", 
+        "accountName": "自动化api", 
+        "branchBankName": "开户支行名称", 
+        "contactName": "自动化api", 
+        "contactPhone": "13055226325", 
+        "phoneCode": "+86", 
+        "branchAddr": "开户支行地址", 
+        "merNo": "276944710478757888"
+      }, 
+      {
+        "bankAccount": "1554967423", 
+        "wdaccId": "282024264620736512", 
+        "accountType": 0, 
+        "bankName": "中国银行", 
+        "auditStatus": 0, 
+        "currencyCode": "CNY", 
+        "accountName": "自动化api", 
+        "branchBankName": "开户支行名称", 
+        "contactName": "自动化api", 
+        "contactPhone": "13055226325", 
+        "phoneCode": "+86", 
+        "branchAddr": "开户支行地址", 
+        "merNo": "276944710478757888"
+      }
+    ], 
+    "merNo": "276944710478757888"
+  }, 
+  "sign": "jWPf0aozv7c2Is5oxmDnsmMo38IXqDYQ0j/mrZZ9gnQEZauLVkmf7Tqld87jrRlRJR8Cc0mYeECmAxcx22FRSFL1tmFIDRZWC2rDc2oXYaePT/ObxPhYdpbzy0enyQniV3C7z9kvohN0gfqsWLl+zDVg9nDeiRJ5eVEfzwDJYRw="
+}
+</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_case/test_case_api.py::test_businessmen_can_use_channel</td>
+          <td class="col-duration">0.10</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">----------------------------- Captured stdout call -----------------------------<br/>----------------------------商户可用通道查询--------------------------
+{
+  "status": 1, 
+  "code": 11, 
+  "dataSign": "OcYjP7+YVAcj6n3D8GT8GjAl3KWthFzPKJF2j4QCuf+neFdCygKMZmmzP14ZBpUP2i9j0XOEIMTTADHEzhEz+tLj2dyIBGa4zb7Rj+kRsKOu39L/HwuO+KNuSUXC54/NNTPyn96ykTfqgIgVCNEv854bmT6c+FCqcy6Po9qAT4M=", 
+  "sign": "LfSsG/+G5K8TSG2hu9ye7bHkUHOWA6h5glO1J7d+cwrErWi0wsVXN2K7yQYOol7oGPIN/MGEbdZElxnJw/QMdfgOH5WVVqBCF9fytZuIV3DmPYlB4rQfTJmphsIadX+V1G/okJtaMK3KHvl1yrH4h0rjwFbCYhITh6Dn7m7U5M0=", 
+  "message": "", 
+  "data": {
+    "count": 11, 
+    "list": [
+      {
+        "currency": "CNY,EUR,GBP,JPY,USD", 
+        "channelTypeName": "独立站点", 
+        "channelTypeTag": "Alone", 
+        "channelTypeId": "242912519121936384"
+      }, 
+      {
+        "currency": "USD", 
+        "newAmazonShopCount": 2, 
+        "channelTypeName": "亚马逊印度站", 
+        "channelTypeTag": "amazon_in", 
+        "channelTypeId": "207346545249624064"
+      }, 
+      {
+        "currency": "EUR,JPY,USD", 
+        "channelTypeName": "多项选择", 
+        "channelTypeTag": "MoreSelect", 
+        "channelTypeId": "195434342388998144"
+      }, 
+      {
+        "currency": "JPY", 
+        "channelTypeName": "Yahoo拍拍", 
+        "channelTypeTag": "Yahoo", 
+        "channelTypeId": "192526641363296256"
+      }, 
+      {
+        "currency": "USD", 
+        "channelTypeName": "test", 
+        "channelTypeTag": "test", 
+        "channelTypeId": "185203141753577472"
+      }, 
+      {
+        "currency": "CNY,EUR,GBP,JPY,USD", 
+        "newAmazonShopCount": 2, 
+        "channelTypeName": "亚马逊日本站", 
+        "channelTypeTag": "amazon_jp", 
+        "channelTypeId": "175785906312192000"
+      }, 
+      {
+        "currency": "CNY,USD", 
+        "channelTypeName": "Walmart", 
+        "channelTypeTag": "Walmart", 
+        "channelTypeId": "109521626009313280"
+      }, 
+      {
+        "currency": "EUR,GBP,USD", 
+        "channelTypeName": "ebay", 
+        "channelTypeTag": "ebay", 
+        "channelTypeId": "104073509965275136"
+      }, 
+      {
+        "currency": "EUR,GBP,JPY", 
+        "newAmazonShopCount": 2, 
+        "channelTypeName": "亚马逊欧洲", 
+        "channelTypeTag": "amazon_eu", 
+        "channelTypeId": "94245507479769088"
+      }, 
+      {
+        "currency": "CNY,EUR,GBP,JPY,USD", 
+        "newAmazonShopCount": 2, 
+        "channelTypeName": "亚马逊美国站", 
+        "channelTypeTag": "amazon_us", 
+        "channelTypeId": "18134904579690496"
+      }, 
+      {
+        "currency": "EUR,GBP,JPY,USD", 
+        "channelTypeName": "wish", 
+        "channelTypeTag": "wish", 
+        "channelTypeId": "18134904579690495"
+      }
+    ], 
+    "merNo": "276944710478757888"
+  }
+}
+</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_case/test_case_api.py::test_create_shop</td>
+          <td class="col-duration">0.06</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">----------------------------- Captured stdout call -----------------------------<br/>----------------------------添加店铺--------------------------
+{
+  "status": 1, 
+  "code": 20002, 
+  "dataSign": "ZARPxk0e4f/dTHUGNLBojDLos4WbInVqB1odZAOl5r5YwB529PaI2YvkLQjMeNF1EpEVigBZ2rh6BH9T7n3RfEkSJmq0Cd033lPqy+K7MtdH+5xOBw1R/0K7UMafA+j2yFMs5FrHwSavlkL18VBQyRv6mljnSskxanl4GKEDZ0g=", 
+  "sign": "TtY3Tqg6k9QBYtPASa4CcBm18tD3zTYT1xX6uq0qCErCEcRFku3w1aXSqte7k6EbYIbFO1uwq63DvT6p0I6gD1Hua9doUdKCrG8jKO6uHUZ/Xu9eg5mx290ClpnoVNmpiQF1AmAGaSSinCzpvLXtNesuJMsFEtlTAitSgzaOJcA=", 
+  "message": "添加店铺成功", 
+  "data": {
+    "status": 0, 
+    "channelId": "288900208887234560", 
+    "auditId": "", 
+    "channelType": "104073509965275136", 
+    "channelName": "7181ebay1556606777", 
+    "merNo": "276944710478757888"
+  }
+}
+1
+(276560765987749888L, 0L, 1, '7181ebay1553664824', 104073509965275136L, None, datetime.datetime(2019, 3, 27, 13, 33, 45, 765000, tzinfo=psycopg2.tz.FixedOffsetTimezone(offset=480, name=None)), datetime.datetime(2019, 3, 27, 13, 33, 45, 750000, tzinfo=psycopg2.tz.FixedOffsetTimezone(offset=480, name=None)), None, None, None, {u'paypal_mer_info_img': u'/onerway/image1/2018/7/17/0b9a1fd5-601c-4edb-9142-fa4117ee3046.png', u'paypal_mer_info_img_id': u'184836625858199552', u'Url': u'http://www.baiducom', u'paypal_email': u'test@qq.com', u'paypal_mer_info': u'11', u'Email': u'856@qq.com'}, 171805655366242304L, 0, 'CHA276560765987749888', Decimal('0.3330'), 0, {u'0': u'0.1', u'5000': u'0.05', u'500': u'0.09'}, 1, None, None, None, 0, 0, None, None, None)
+</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_case/test_case_api.py::test_picture_puload</td>
+          <td class="col-duration">0.13</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">----------------------------- Captured stdout call -----------------------------<br/>----------------------------------图片上传------------------------------------
+{
+  "status": 1, 
+  "code": 10021, 
+  "dataSign": "Q9Ekv8EuzasKwcU0PmjzjpZyqDcnnqTSiZLYjtRAy8mG7wNjaZpchO0OqLWmyDkoVUAojNCVicWqzrUb0so7nWS0jKCaOsdpazmkc1DGT89UwFgih6GJUJDJJIzhXliDjCsIEdEPB3M5jkAGDJ/zmDEbw+4PIeSfLBkK5O/pU98=", 
+  "sign": "KWz5kCs41vWDI3IxCQOaomge3sXERhf/bQXYhC7yfZY0vcrQ7yufj3LzMKpIzzfZXsgO3TLK9yhM9aOplAk/m3t5H4YZ9LPbAZOgOkOmCxlSS3eaS4YfHCtvjIoyqChTIBCOBEd42ixUxsVDSBDB+sk86tX7nvVSLEiWoXMTGek=", 
+  "message": "上传成功", 
+  "data": {
+    "partenerId": "170776145556545536", 
+    "id": "288900209600266240"
+  }
+}
+</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_case/test_case_api.py::test_picture_puload_2m</td>
+          <td class="col-duration">0.56</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">----------------------------- Captured stdout call -----------------------------<br/>----------------------------------图片上传超过2M------------------------------------
+{
+  "status": 0, 
+  "message": "上传失败 : 上传文件太大", 
+  "code": 10020, 
+  "sign": "LjGNcIeuTHP+zSg/TDOJspli5mpTnceu7vosGO/UOkPlZifTMBAk2mzh/QcDt9NRIG1+GnDgIRBYB/XhFgVmBCP7B1uJ9bhBKYkdOL+q+bcpOJ0kwyz+TyRu0giKrA2W4yVU7AGpFVo6Mm+nF5twtGLNYWwsk5kJXZz4ctVd9PU="
+}
+</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_case/test_case_api.py::test_ebay_order_submission</td>
+          <td class="col-duration">0.05</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">----------------------------- Captured stdout call -----------------------------<br/>-------------------------------Ebay订单报送-----------------------------
+{
+  "status": 1, 
+  "code": 60000, 
+  "dataSign": "laW/WCEManEazJc4MrBZMSR3wPL7Sw4C/Lx94ixBwbOxj8gbrI5mTdFYQ7uAYlQUQlgUFGzOLOUaPrLUYgKtyIXrLdT/Ykoug4lD2tT3SooEu4qRf385jBlPqoWPC/C4PQqbSn1fZnLGfOJBkyhdgPaF2SDk3S0Tt/K5EM4eNPg=", 
+  "sign": "A/NeeeWB8kP5kgpyEJxWpd8uaKCkX5diyoR3FNbpB7I2l9GYrKAnpGU19qACcV45eTKql843zMxLzbb28LmqiA7qgeJLCaRbDfNMbycO0Mh0/zhkNEssJzStArL9pe4JZhvZUsReGYK93+U/ifWV9LcYToOveUi1laY7QuqeabY=", 
+  "message": "上送成功", 
+  "data": {
+    "merNo": "171805655366242304", 
+    "channelId": "184836678295388160", 
+    "partnerId": "170776145556545536", 
+    "channelTypeId": "104073509965275136"
+  }
+}
+</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_case/test_case_api.py::test_yu_e_select</td>
+          <td class="col-duration">0.07</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">----------------------------- Captured stdout call -----------------------------<br/>----------------------------- 余额查询 -----------------------------
+{
+  "status": 1, 
+  "dataSign": "B4sUJQzyQ0HkVOm6O3sBCY60/IllQURJvOtznQwNyjBfGfb7cmHOKzuoIwVgN3420q9kVIjz0yrOXTmENi6OpjvlYFwd6FXSV3eAItxQ3/cWubwFGi/7nag/VNWqwJb7MPXckX++bNojQyjBoq01ao3cx2em3dOwqJdJmNAAnxs=", 
+  "code": 11, 
+  "data": {
+    "balance": [
+      {
+        "totalBalance": 129360.0, 
+        "waitBalance": 11931.1, 
+        "freezeAmount": 120000.0, 
+        "currencyCode": "EUR", 
+        "readyBalance": 117428.9, 
+        "currencyName": "欧元", 
+        "isFreezeAllAmount": false
+      }, 
+      {
+        "totalBalance": 0.0, 
+        "waitBalance": 0.0, 
+        "freezeAmount": 0.0, 
+        "currencyCode": "USD", 
+        "readyBalance": 0.0, 
+        "currencyName": "美元", 
+        "isFreezeAllAmount": false
+      }
+    ], 
+    "merNo": "276944710478757888"
+  }, 
+  "sign": "hMgW1ARGHirvs4cNCdyxL2johsrDeuMLVLEPjgUY/5sa4VczC03p/nH0ULv5BQyWDVEQ0sMEV36+Nfo3+qaerg7m8yWjAYptOrXxHypUAC8s0rTsZuvmE8buZYyqsBXP3eDEnpnw5Fi4F8e9jsu3rVdTkY0oQAuod0Vypm6RJUo="
+}
+</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_case/test_case_api.py::test_yu_e_select_no_merno</td>
+          <td class="col-duration">0.02</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">----------------------------- Captured stdout call -----------------------------<br/>----------------------------- 余额查询-不传MERNO -----------------------------
+{
+  "status": 0, 
+  "message": "商户号无法识别", 
+  "code": 10041, 
+  "dataSign": "bziyq6S/6AxvnYKsTLbNko/+ux3H7XWZ8cLHUKY6o2kwz+0rtgallGOMGT+SaZf+g3fKKx0ygdSfQm42bEfUOzrxd95zwj3zhyo+L5gAWsRYfOveFElx0M+rW7WZMLGYS+3NCemoNwg1/pNr7IpH/o9e3s+IZrGR/dXaUul9xY4=", 
+  "sign": "Hlk0hxojn3ptBpwFx2t5jMdQFyhRzb1iphY2VYHGNhD+X2Wz+/gzMPBbFVPKz4QydUJDsV1P4iFsdBZ3gwINOoMBL/BMBW/aVQexuzsazS9uguduWifXvnprNccO/t7kZZwDh+avT4n8M4L937KK+ph5nxkddbPznvIKkL5fK6E="
+}
+</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_case/test_case_api.py::test_kyc_open_accounts</td>
+          <td class="col-duration">0.18</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">----------------------------- Captured stdout call -----------------------------<br/>------------------------------------开户---------------------------
+{
+  "status": 1, 
+  "code": 10021, 
+  "dataSign": "lhYEwgcYccEC1tuuH7tRDhradMzU/BrTaHsVWuDLjXh/cnFTRF8iHNCo511QOMYrjLLS5oqJFv1Iaf0ds7YolGLlAs2CkBlTFNYZJbpoSUEHfFL2DxE7CAHXtL2mKS/iKr2RA+S6YDADudD0e4cJxahD+4AjPcfGlg9/kS9Blno=", 
+  "sign": "Yb+2kBwqAMH1nEHeO3qIHek8R2VePgRpfs705BOjY2+Bcxht8Sb3uq5x/FPcZ9mE1V+xNNfZ7ZF04Y0aQbxEGMQPrx43Aq1BHTG8pWpI0zQETzLh22PuHAHGrPmdo7IIzXUGmWRMtzE7kv/DqMV4u11OHg5VBM6qnD6Sviwsimk=", 
+  "message": "信息上传成功.", 
+  "data": {
+    "merStatus": 0, 
+    "merNo": "288900213001846784", 
+    "accountType": "1", 
+    "area": "中国"
+  }
+}
+</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_case/test_case_api.py::test_zhang_hu_select</td>
+          <td class="col-duration">0.05</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">----------------------------- Captured stdout call -----------------------------<br/>-------------------------账户查询------------------------------
+{
+  "status": 1, 
+  "dataSign": "Y0mtiAOmQ101t2Kbc19O6DsYupx4jrRQHKBCChNfr173jBFbTBVmywRf7qqMc5150q3XMuEBaP5pqSMH2i3J1zc2+hxgmZzGrg77z7EzooVmegHkn9XYeLqccFU9NyvTT97/u1xPVn0lF9qmCFlJFYK3kiYDzQPKewEpqett9z4=", 
+  "code": 101, 
+  "data": {
+    "province": "上海", 
+    "city": "上海", 
+    "businessNumber": "324535", 
+    "name": "企业法人", 
+    "business": "276944699363852288", 
+    "area": "中国", 
+    "country": "中国", 
+    "idCard": "324535896525145234", 
+    "idCardImg1": "276944699363852288", 
+    "idCardImg2": "276944699363852288", 
+    "partnerId": "170776145556545536", 
+    "accountType": "1", 
+    "address": "上海市上海", 
+    "merName": "自动化api", 
+    "merStatus": 1, 
+    "merNo": "276944710478757888"
+  }, 
+  "sign": "hhOleHApP/qfF6s+IN2S0xBF7zklMwdeb9nCuYgOnYdToe3brN76ZPndZwTxHYqFBjMwA2aSAO8a6p2QOTDyuzv5pprvNOYopArnUWvQW6jXZOVAo7ph8FZWsYmmGxXdpwzoQl5PJ44wT76FQLjpYS3GakQlt+xo06EEl5V22o0="
+}
+</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_case/test_case_api.py::test_zhang_hu_select_no_merno</td>
+          <td class="col-duration">0.03</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">----------------------------- Captured stdout call -----------------------------<br/>-------------------------账户查询-merNo不填------------------------------
+{
+  "status": 0, 
+  "message": "商户号无法识别", 
+  "code": 10041, 
+  "dataSign": "bziyq6S/6AxvnYKsTLbNko/+ux3H7XWZ8cLHUKY6o2kwz+0rtgallGOMGT+SaZf+g3fKKx0ygdSfQm42bEfUOzrxd95zwj3zhyo+L5gAWsRYfOveFElx0M+rW7WZMLGYS+3NCemoNwg1/pNr7IpH/o9e3s+IZrGR/dXaUul9xY4=", 
+  "sign": "Hlk0hxojn3ptBpwFx2t5jMdQFyhRzb1iphY2VYHGNhD+X2Wz+/gzMPBbFVPKz4QydUJDsV1P4iFsdBZ3gwINOoMBL/BMBW/aVQexuzsazS9uguduWifXvnprNccO/t7kZZwDh+avT4n8M4L937KK+ph5nxkddbPznvIKkL5fK6E="
+}
+</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_case/test_case_api.py::test_dian_pu_select</td>
+          <td class="col-duration">0.09</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">----------------------------- Captured stdout call -----------------------------<br/>-------------------------店铺查询------------------------------
+{
+  "status": 1, 
+  "dataSign": "LnXaX3dXEYjxzRmSKyrtFmVqRwruC6FPnM9OF+7ipAxzwiaDcluDIalVPbZ1m35SsekNQoynLtS4ANK/hp3y1/TwRoX+ei+y/8nr+mqYj78wbGqT0TjPDPNjR7Yc1t9MV3YXH1P6tMDcQ4jiucNOn4Rfk5UcrhXNSG2E+L3fnyw=", 
+  "code": 101, 
+  "data": {
+    "count": 24, 
+    "list": [
+      {
+        "channel": {
+          "status": "0", 
+          "imagePath": "/onerway/image1/2018/7/17/0b9a1fd5-601c-4edb-9142-fa4117ee3046.png", 
+          "paypalMerInfo": "11", 
+          "channelTypeId": "104073509965275136", 
+          "url": "http://www.baiducom", 
+          "paypalEmail": "test@qq.com", 
+          "paypalAccountImageId": "184836625858199552", 
+          "channelId": "288900208887234560", 
+          "writeOffStatus": 0, 
+          "writeOffReasonRemark": "", 
+          "channelName": "7181ebay1556606777", 
+          "merNo": "276944710478757888", 
+          "email": "856@qq.com"
+        }
+      }, 
+      {
+        "channel": {
+          "status": "0", 
+          "channelTypeId": "94245507479769088", 
+          "url": "http://www.test.com", 
+          "channelId": "288900207184347136", 
+          "writeOffStatus": 0, 
+          "writeOffReasonRemark": "", 
+          "newChannel": false, 
+          "channelName": "0430EUR1556606777", 
+          "merNo": "276944710478757888", 
+          "email": "test430eur@163.com"
+        }
+      }, 
+      {
+        "channel": {
+          "status": "0", 
+          "channelTypeId": "94245507479769088", 
+          "url": "http://www.test.com", 
+          "channelId": "288898579966361600", 
+          "writeOffStatus": 0, 
+          "writeOffReasonRemark": "", 
+          "newChannel": false, 
+          "channelName": "0430EUR1556606389", 
+          "merNo": "276944710478757888", 
+          "email": "test430eur@163.com"
+        }
+      }, 
+      {
+        "channel": {
+          "status": "0", 
+          "channelTypeId": "94245507479769088", 
+          "url": "http://www.test.com", 
+          "channelId": "288898241670578176", 
+          "writeOffStatus": 0, 
+          "writeOffReasonRemark": "", 
+          "newChannel": false, 
+          "channelName": "0430EUR1556606308", 
+          "merNo": "276944710478757888", 
+          "email": "test430eur@163.com"
+        }
+      }, 
+      {
+        "channel": {
+          "status": "0", 
+          "imagePath": "/onerway/image1/2018/7/17/0b9a1fd5-601c-4edb-9142-fa4117ee3046.png", 
+          "paypalMerInfo": "11", 
+          "channelTypeId": "104073509965275136", 
+          "url": "http://www.baiducom", 
+          "paypalEmail": "test@qq.com", 
+          "paypalAccountImageId": "184836625858199552", 
+          "channelId": "288897761364049920", 
+          "writeOffStatus": 0, 
+          "writeOffReasonRemark": "", 
+          "channelName": "7181ebay1556606194", 
+          "merNo": "276944710478757888", 
+          "email": "856@qq.com"
+        }
+      }, 
+      {
+        "channel": {
+          "status": "0", 
+          "channelTypeId": "94245507479769088", 
+          "url": "http://www.test.com", 
+          "channelId": "288897759929597952", 
+          "writeOffStatus": 0, 
+          "writeOffReasonRemark": "", 
+          "newChannel": false, 
+          "channelName": "0430EUR1556606193", 
+          "merNo": "276944710478757888", 
+          "email": "test430eur@163.com"
+        }
+      }, 
+      {
+        "channel": {
+          "status": "0", 
+          "imagePath": "/onerway/image1/2018/7/17/0b9a1fd5-601c-4edb-9142-fa4117ee3046.png", 
+          "paypalMerInfo": "11", 
+          "channelTypeId": "104073509965275136", 
+          "url": "http://www.baiducom", 
+          "paypalEmail": "test@qq.com", 
+          "paypalAccountImageId": "184836625858199552", 
+          "channelId": "288858341038522368", 
+          "writeOffStatus": 0, 
+          "writeOffReasonRemark": "", 
+          "channelName": "7181ebay1556596795", 
+          "merNo": "276944710478757888", 
+          "email": "856@qq.com"
+        }
+      }, 
+      {
+        "channel": {
+          "status": "0", 
+          "channelTypeId": "94245507479769088", 
+          "url": "http://www.test.com", 
+          "channelId": "288858339901865984", 
+          "writeOffStatus": 0, 
+          "writeOffReasonRemark": "", 
+          "newChannel": false, 
+          "channelName": "0430EUR1556596795", 
+          "merNo": "276944710478757888", 
+          "email": "test430eur@163.com"
+        }
+      }, 
+      {
+        "channel": {
+          "status": "0", 
+          "imagePath": "/onerway/image1/2018/7/17/0b9a1fd5-601c-4edb-9142-fa4117ee3046.png", 
+          "paypalMerInfo": "11", 
+          "channelTypeId": "104073509965275136", 
+          "url": "http://www.baiducom", 
+          "paypalEmail": "test@qq.com", 
+          "paypalAccountImageId": "184836625858199552", 
+          "channelId": "288858273581531136", 
+          "writeOffStatus": 0, 
+          "writeOffReasonRemark": "", 
+          "channelName": "7181ebay1556596779", 
+          "merNo": "276944710478757888", 
+          "email": "856@qq.com"
+        }
+      }, 
+      {
+        "channel": {
+          "status": "0", 
+          "channelTypeId": "94245507479769088", 
+          "url": "http://www.test.com", 
+          "channelId": "288858272646201344", 
+          "writeOffStatus": 0, 
+          "writeOffReasonRemark": "", 
+          "newChannel": false, 
+          "channelName": "0430EUR1556596779", 
+          "merNo": "276944710478757888", 
+          "email": "test430eur@163.com"
+        }
+      }
+    ], 
+    "merNo": "276944710478757888", 
+    "page": 1
+  }, 
+  "sign": "aQGK5eHS/dWxCPfavJqsTQXCu2MUoJcbqsZySDoAuItlYpQOy0wKgPa9z5c3kGhXD652BKSCLOsLQQ67sahzbLaJaD4FMbyXwK27rzb7jdZeizWkIgGgF9Fbc501EBO31H2Z2BWHp75h/qmKeWZCQRQJjCem5Lkp2n4khNFWlFY="
+}
+(24, 24)
+</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_case/test_case_api.py::test_dian_pu_select_channerid</td>
+          <td class="col-duration">0.06</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">----------------------------- Captured stdout call -----------------------------<br/>-------------------------店铺查询-查询固定id的店铺------------------------------
+{
+  "status": 1, 
+  "dataSign": "UAkCK/t8UXWkar9tgc7WEKFJ/4bSQsNSLXsZhbXj6xbHvCxeN6rSQO8HbpbPDHrQma8UPlb7dGNgXo2O3ZH5koDwU0s3BMIuUs5W94pgb0bPuxcnulMIrLT+TllBlXWjlh9yLbxDghIT8wGe2LrWMhGIPaKd8kn7O1Sg+UlKiAQ=", 
+  "code": 101, 
+  "data": {
+    "count": 1, 
+    "list": [
+      {
+        "channel": {
+          "status": "0", 
+          "channelTypeId": "94245507479769088", 
+          "url": "http://www.tets.com", 
+          "channelId": "284182608722690048", 
+          "writeOffStatus": 2, 
+          "writeOffReasonRemark": "", 
+          "newChannel": false, 
+          "channelName": "欧洲", 
+          "merNo": "276944710478757888", 
+          "email": "999111@qq.com"
+        }
+      }
+    ], 
+    "merNo": "276944710478757888", 
+    "page": 1
+  }, 
+  "sign": "HQDPyLF5yBecZqcC5SHk0RvbyHQJS84r5XQiFDjXHXxiI2gU5ec711VLegbQx+ZOOx7CSbsG4X2/Jzr3x7ko8Chk7v7GaHWQ7+CDUla6LexaM5DtIkT22wuYIFz+m3dFeqvuU5S9u5Ev/OJPbSzecDvueWwXYmVpzuBNuvoalCc="
+}
+</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_case/test_case_api.py::test_zhuan_zhang_type_select</td>
+          <td class="col-duration">0.06</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">----------------------------- Captured stdout call -----------------------------<br/>-------------------------付款转账类型查询------------------------------
+{
+  "status": 1, 
+  "dataSign": "lINNnxyiM+bf6umh/2an66yu5BCYECyvFmj4wqN0/F3Zc2JkwDhZH2Ns74zhSIdGQCad1MIt37PCphQvgcaKEpVcnL8S76uPzPyWEMBlTDUIMofhTJRuU1F3KWLuEKsRuxwv2t3oBnBQ5LyQNsWU0lK6QHz02mGBJXH3sbms8iU=", 
+  "code": 11, 
+  "data": {
+    "merNo": "276944710478757888", 
+    "list": [
+      {
+        "countryName": "英国", 
+        "country": "GBR", 
+        "apiInfo": [
+          {
+            "description": "收款方银行名称", 
+            "key": "Payee bank name"
+          }, 
+          {
+            "description": "银行识别码", 
+            "key": "BIC"
+          }, 
+          {
+            "description": "收款方银行帐号", 
+            "key": "IBAN"
+          }, 
+          {
+            "description": "收款方名称", 
+            "key": "Payee"
+          }, 
+          {
+            "description": "收款方地址", 
+            "key": "Recipient Address"
+          }
+        ], 
+        "receiveCurrencys": "GBP", 
+        "paymentType": 0
+      }, 
+      {
+        "countryName": "德国", 
+        "country": "DEU", 
+        "apiInfo": [
+          {
+            "description": "收款方银行名称", 
+            "key": "Payee bank name"
+          }, 
+          {
+            "description": "银行识别码", 
+            "key": "BIC"
+          }, 
+          {
+            "description": "收款方银行帐号", 
+            "key": "IBAN"
+          }, 
+          {
+            "description": "收款方名称", 
+            "key": "Payee"
+          }, 
+          {
+            "description": "收款方地址", 
+            "key": "Recipient Address"
+          }
+        ], 
+        "receiveCurrencys": "EUR", 
+        "paymentType": 0
+      }
+    ], 
+    "paymentCurrencys": "EUR,JPY,CNY,USD,GBP"
+  }, 
+  "sign": "hkFfnbhaXN4g9z1Uy84kSLMW230nKQcNZq7cGU8MiLpB7KHHEa9VkdXCDbuaTDoGdpPt5zhcEM4zDa6xGEUs0fz0JaZ0x7pJvExXqUMHRH4JrX+GeOC931LJHomA1QTBNphtUSUqElqtiNLn5UlatsogPFCCyYzgTXegBZsAKzM="
+}
+</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_case/test_case_api.py::test_zhuan_zhang_hui_lv_select</td>
+          <td class="col-duration">0.03</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">----------------------------- Captured stdout call -----------------------------<br/>-------------------------付款转账汇率及手续费率查询-传金额------------------------------
+{
+  "status": 1, 
+  "code": 11, 
+  "dataSign": "TJRQSvqDH4MsNszv1gUSTfeBcDzD+fSMyK+nG2gyvLbBcQT2wK/9FXi3rRiONe/P943zzpO3kYsMCGhyiOUrt1+MkQWERGigjOxR3iyQ2DlndXlMuLCoEXY0U7Wr/N1C37+an4ylniO38qVVKq6YmV+KBkllXp4sfEEKxnoRnsg=", 
+  "sign": "CGFJ+EbHk65o1ttwSCN6FSIIoOYIzRpOcyoT4nr6vdcIfztxx2uzkzQOZQKLCHR1scm9v/lo7pq0C0K83F5WiE4wB//+KpYrHayAyylDysc6hprnIfHgVTnqH1b+bs+gd9q2+kgGbXY0WhOPfoATOiYG7fuiRjQ/+naAR/NrWKY=", 
+  "message": "", 
+  "data": {
+    "paymentAmount": 1000.0, 
+    "chargeFee": 11.81, 
+    "feeRate": 0.01, 
+    "rate": 1.1813, 
+    "actualPaymentAmount": 1193.11, 
+    "feeType": 0
+  }
+}
+</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_case/test_case_api.py::test_zhuan_zhang_hui_lv_no_amount</td>
+          <td class="col-duration">0.03</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">----------------------------- Captured stdout call -----------------------------<br/>-------------------------付款转账汇率及手续费率查询-不传金额------------------------------
+{
+  "status": 1, 
+  "code": 11, 
+  "dataSign": "fISqjttkdbjUBIQSMuhTfhpQ66RyLmHBbiUYmL0Q6KqbyNN8zplgna7om7LDPA19F6bEOipz0fseYVA2trf2WdYHitXJZgKYI2M/QI+200gQvm9SXCM9uFHKih6vtuly/eWAKNydAmi9kC0Mmp2UXpwZ+0oh8pbaJtbActn/SR0=", 
+  "sign": "EwSt1/L84aKFofhfCv7GK7hUnsVIcdB6HUNoT0GWExHIze/3JygeDvwEheUi8yg13dir8shp/Bkbv9CGUUffVO4Y0fF0ma0yfYMYKhZTAb+CZ/D6dG+2YvmO+YvKpjEN/o1U2HCaUclNFVb5uqE32XYg1UHltbYaOIJ7lShNJcc=", 
+  "message": "", 
+  "data": {
+    "feeRate": 0.01, 
+    "rate": 1.1813, 
+    "feeType": 0
+  }
+}
+</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_case/test_case_api.py::test_zhuan_zhang_apply</td>
+          <td class="col-duration">0.13</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">----------------------------- Captured stdout call -----------------------------<br/>-------------------------转账申请------------------------------
+{
+  "status": 1, 
+  "dataSign": "M97Wfmw5Lnn+FLoRUPWpEVNxu5Rrcyu2fxe+bSxY9r4BFW8hiCBHX0gw2KA/2nuHBB+UM8cekB1X8CqXMNQFTfxcl/utk9sQeGwukjOt4VHAL7dIuNjbvSkUieKWsyKa1mmcUT/jijas3VqFbGmG7ZAUIVhS0NEM+6ApAxtrKeI=", 
+  "code": 101, 
+  "data": {
+    "chargeFee": 11.81, 
+    "paymentType": 0, 
+    "rate": 1.1813, 
+    "partnerId": "170776145556545536", 
+    "time": "1556606779848", 
+    "paymentCurrency": "EUR", 
+    "transactionId": "288900215736532993", 
+    "actualPaymentAmount": 1193.11, 
+    "merNo": "276944710478757888"
+  }, 
+  "sign": "kDemtik+dbTdA3eh3UhGzAV56Y9+ghZAewBI9LOtxgTmD+L235O1tK0erVMFFx+0UgTeHTe5ePX+ZjTMdvm8ztUXPPntR7eQ6eDoEsczeLRgIEB+27+u2Kb358F50zCCYL1l07p4FbO2aj3i8i/3N9kSY34Znzar91FbBPHRNjo="
+}
+288900215736532993
+</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_case/test_case_api.py::test_zhuan_zhang_select</td>
+          <td class="col-duration">0.09</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">----------------------------- Captured stdout call -----------------------------<br/>-------------------------转账查询------------------------------
+{
+  "status": 1, 
+  "dataSign": "XCmlfhigvnUPE3Q6bTixTEC8Cq5ubEVU1qbcsM1RdJp59P1sADNPxCP6mXp/ReKXd8qvWSeIPBcylYDCPWXJuPZIL/VIux+eEc6HMjmGzoXm92L2bLDxkIyMrhq7kxUktye4BYDK148ggvwFdnDlLnzl9bnMnpz+IiVutaF8i2U=", 
+  "code": 11, 
+  "data": {
+    "count": 27, 
+    "merNo": "276944710478757888", 
+    "list": [
+      {
+        "status": 0, 
+        "payCurrencyCode": "EUR", 
+        "paymentAmount": 1000.0, 
+        "chargeFee": 11.81, 
+        "receiptCurrencyCode": "GBP", 
+        "rate": 1.1813, 
+        "apiInfo": {
+          "Payee bank name": "payyname", 
+          "Payee": "payee", 
+          "Recipient Address": "address", 
+          "IBAN": "iban", 
+          "BIC": "bic"
+        }, 
+        "transactionId": "288900215736532993", 
+        "actualPaymentAmount": 1193.11, 
+        "vatNumber": "2"
+      }, 
+      {
+        "status": 0, 
+        "payCurrencyCode": "EUR", 
+        "paymentAmount": 1000.0, 
+        "chargeFee": 11.81, 
+        "receiptCurrencyCode": "GBP", 
+        "rate": 1.1813, 
+        "apiInfo": {
+          "Payee bank name": "payyname", 
+          "Payee": "payee", 
+          "Recipient Address": "address", 
+          "IBAN": "iban", 
+          "BIC": "bic"
+        }, 
+        "transactionId": "288897772319571969", 
+        "actualPaymentAmount": 1193.11, 
+        "vatNumber": "2"
+      }, 
+      {
+        "status": 0, 
+        "payCurrencyCode": "EUR", 
+        "paymentAmount": 1000.0, 
+        "chargeFee": 11.81, 
+        "receiptCurrencyCode": "GBP", 
+        "rate": 1.1813, 
+        "apiInfo": {
+          "Payee bank name": "payyname", 
+          "Payee": "payee", 
+          "Recipient Address": "address", 
+          "IBAN": "iban", 
+          "BIC": "bic"
+        }, 
+        "transactionId": "288858350215659521", 
+        "actualPaymentAmount": 1193.11, 
+        "vatNumber": "2"
+      }, 
+      {
+        "status": 0, 
+        "payCurrencyCode": "EUR", 
+        "paymentAmount": 1000.0, 
+        "chargeFee": 11.81, 
+        "receiptCurrencyCode": "GBP", 
+        "rate": 1.1813, 
+        "apiInfo": {
+          "Payee bank name": "payyname", 
+          "Payee": "payee", 
+          "Recipient Address": "address", 
+          "IBAN": "iban", 
+          "BIC": "bic"
+        }, 
+        "transactionId": "288858279566802945", 
+        "actualPaymentAmount": 1193.11, 
+        "vatNumber": "2"
+      }, 
+      {
+        "status": 0, 
+        "payCurrencyCode": "EUR", 
+        "paymentAmount": 1000.0, 
+        "chargeFee": 11.81, 
+        "receiptCurrencyCode": "GBP", 
+        "rate": 1.1813, 
+        "apiInfo": {
+          "Payee bank name": "payyname", 
+          "Payee": "payee", 
+          "Recipient Address": "address", 
+          "IBAN": "iban", 
+          "BIC": "bic"
+        }, 
+        "transactionId": "288857834014277633", 
+        "actualPaymentAmount": 1193.11, 
+        "vatNumber": "2"
+      }, 
+      {
+        "status": 0, 
+        "payCurrencyCode": "EUR", 
+        "paymentAmount": 1000.0, 
+        "chargeFee": 11.81, 
+        "receiptCurrencyCode": "GBP", 
+        "rate": 1.1813, 
+        "apiInfo": {
+          "Payee bank name": "payyname", 
+          "Payee": "payee", 
+          "Recipient Address": "address", 
+          "IBAN": "iban", 
+          "BIC": "bic"
+        }, 
+        "transactionId": "288567298149744641", 
+        "actualPaymentAmount": 1193.11, 
+        "vatNumber": "2"
+      }, 
+      {
+        "status": 0, 
+        "payCurrencyCode": "EUR", 
+        "paymentAmount": 1000.0, 
+        "chargeFee": 11.81, 
+        "receiptCurrencyCode": "GBP", 
+        "rate": 1.1813, 
+        "apiInfo": {
+          "Payee bank name": "payyname", 
+          "Payee": "payee", 
+          "Recipient Address": "address", 
+          "IBAN": "iban", 
+          "BIC": "bic"
+        }, 
+        "transactionId": "288566022011781121", 
+        "actualPaymentAmount": 1193.11, 
+        "vatNumber": "2"
+      }, 
+      {
+        "status": 0, 
+        "payCurrencyCode": "EUR", 
+        "paymentAmount": 1000.0, 
+        "chargeFee": 11.81, 
+        "receiptCurrencyCode": "GBP", 
+        "rate": 1.1813, 
+        "apiInfo": {
+          "Payee bank name": "payyname", 
+          "Payee": "payee", 
+          "Recipient Address": "address", 
+          "IBAN": "iban", 
+          "BIC": "bic"
+        }, 
+        "transactionId": "288565135012954113", 
+        "actualPaymentAmount": 1193.11, 
+        "vatNumber": "2"
+      }, 
+      {
+        "status": 0, 
+        "payCurrencyCode": "EUR", 
+        "paymentAmount": 1000.0, 
+        "chargeFee": 11.81, 
+        "receiptCurrencyCode": "GBP", 
+        "rate": 1.1813, 
+        "apiInfo": {
+          "Payee bank name": "payyname", 
+          "Payee": "payee", 
+          "Recipient Address": "address", 
+          "IBAN": "iban", 
+          "BIC": "bic"
+        }, 
+        "transactionId": "288565002359701505", 
+        "actualPaymentAmount": 1193.11, 
+        "vatNumber": "2"
+      }, 
+      {
+        "status": 0, 
+        "payCurrencyCode": "EUR", 
+        "paymentAmount": 1000.0, 
+        "chargeFee": 11.81, 
+        "receiptCurrencyCode": "GBP", 
+        "rate": 1.1813, 
+        "apiInfo": {
+          "Payee bank name": "payyname", 
+          "Payee": "payee", 
+          "Recipient Address": "address", 
+          "IBAN": "iban", 
+          "BIC": "bic"
+        }, 
+        "transactionId": "284175624438972417", 
+        "actualPaymentAmount": 1193.11, 
+        "vatNumber": "2"
+      }
+    ], 
+    "page": 1
+  }, 
+  "sign": "QmuXcqeDo7rTCd2mVYZGqIyL7/G1RWD3tfXp7GDc0lQkw494yo8F/XraZY46ZI2ZpM4bRyWyEzD8YFRaq1pmnQ2+kVFAk8XewulQjoHANSdbqjFBC3jJzW04XZgvSgTdLrfp3jRwPTYEtLRVy6K29Zh216i97q6/R5nqnkiMSjk="
+}
+277293641171632128
+277297060351475712
+277297765262983168
+277297765262983168
+</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_case/test_case_api.py::test_add_ti_xian_bank_card</td>
+          <td class="col-duration">0.14</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">----------------------------- Captured stdout call -----------------------------<br/>-------------------------添加提现银行卡------------------------------
+{
+  "status": 1, 
+  "code": 40001, 
+  "dataSign": "FZRjCDoQZ8Wf8qKQdd/RaBoEEWONpG8cX1bL074U1riqjZf+Cwo5c7qoGDbeKuarHUdmmdLjYMG0clnCP3UmAKM99fzenbzQoYBiokAA+9tgZFzCsSMKY/rmxLs+k2ziXxAjHPP+cmpQ0hV9BJPaHclCy84h3MhlOHQ9s8MRmYc=", 
+  "sign": "GQEiwmnYVMw/JqHH89DWW1UqIgG8ff+Dx62GHVjcvha/aD3B1dUTwWBuMl7sb21x0Sf8shKKWh2QZZ2U2C42Atda/HmzE6eZVvr8xS2ln31mWB3OQH2YyL/tUgmYRsitr8ebzRJvEtf3UkSKJkeHgc9BNmC9SJT5wvfz0jG80bw=", 
+  "message": "添加提现账户成功", 
+  "data": {
+    "bankAccount": "1556606779", 
+    "wdaccId": "288900217087098880", 
+    "bankName": "中国银行", 
+    "withdrawAccountCountry": "CHN", 
+    "currency": "CNY", 
+    "merNo": "276944710478757888"
+  }
+}
+&lt;type 'list'&gt;
+1
+288900217087098880
+</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_case/test_case_api.py::test_ti_xian_zhang_hao_delete</td>
+          <td class="col-duration">0.08</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">----------------------------- Captured stdout call -----------------------------<br/>-------------------------提现银行账号-删除------------------------------
+278813596413231104
+{
+  "status": 1, 
+  "message": "提现账户278813596413231104删除成功", 
+  "code": 40015, 
+  "sign": "Xb8p0BoBasKeL0ZtPLyEoOsSR6Wcd+hL4vbioLl9hOJ72dt2M2iAjTw8lqCDeYb6JEUNlwMgiBHZQ+T1e011g/Fc1KAh/d5qlCwavfUZwk+6LUEl/gT9zEoxbxe5KQsxMJInoeFw3aEWbJVlG+rkLwiwmG2xqBmHrUb4KRLnAdQ="
+}
+</div></td></tr></tbody>
+      <tbody class="passed results-table-row">
+        <tr>
+          <td class="col-result">Passed</td>
+          <td class="col-name">test_case/test_case_api.py::test_ti_xian_zhang_hao_delete_no_wdaccid</td>
+          <td class="col-duration">0.02</td>
+          <td class="col-links"></td></tr>
+        <tr>
+          <td class="extra" colspan="4">
+            <div class="log">----------------------------- Captured stdout call -----------------------------<br/>-------------------------提现银行账号-删除-不传wdaccid------------------------------
+&lt;html&gt;&lt;head&gt;&lt;title&gt;Apache Tomcat/7.0.70 - Error report&lt;/title&gt;&lt;style&gt;&lt;!--H1 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:22px;} H2 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:16px;} H3 {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;font-size:14px;} BODY {font-family:Tahoma,Arial,sans-serif;color:black;background-color:white;} B {font-family:Tahoma,Arial,sans-serif;color:white;background-color:#525D76;} P {font-family:Tahoma,Arial,sans-serif;background:white;color:black;font-size:12px;}A {color : black;}A.name {color : black;}HR {color : #525D76;}--&gt;&lt;/style&gt; &lt;/head&gt;&lt;body&gt;&lt;h1&gt;HTTP Status 400 - Required String parameter 'wdaccId' is not present&lt;/h1&gt;&lt;HR size="1" noshade="noshade"&gt;&lt;p&gt;&lt;b&gt;type&lt;/b&gt; Status report&lt;/p&gt;&lt;p&gt;&lt;b&gt;message&lt;/b&gt; &lt;u&gt;Required String parameter 'wdaccId' is not present&lt;/u&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;description&lt;/b&gt; &lt;u&gt;The request sent by the client was syntactically incorrect.&lt;/u&gt;&lt;/p&gt;&lt;HR size="1" noshade="noshade"&gt;&lt;h3&gt;Apache Tomcat/7.0.70&lt;/h3&gt;&lt;/body&gt;&lt;/html&gt;
+42
+</div></td></tr></tbody></table></body></html>
