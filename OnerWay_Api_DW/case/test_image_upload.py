@@ -5,6 +5,8 @@ import sys
 sys.path.append("D:\eclipse-workspace\Tests\Api_TestCase")
 from OnerWay_Api_DW.common.getConfig import GetConfigVal
 from OnerWay_Api_DW.common.public_requests import PublicRequest
+from OnerWay_Api_DW.common.data_base_conn import Data_Base_Conn
+
 '图片上传'
 
 def test_image_upload():
@@ -30,5 +32,3 @@ def test_image_upload():
     code = r.json()["code"]
 
     assert status == 1 and code == 10021
-
-

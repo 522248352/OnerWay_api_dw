@@ -21,4 +21,5 @@ def test_account_query():
     print(json.dumps(r.json(), indent=2, ensure_ascii=False, sort_keys=False))
     status = r.json()["status"]
     code = r.json()["code"]
-    assert status == 1 and code == 101
+    assert status == 1 and code == 101111111
+
