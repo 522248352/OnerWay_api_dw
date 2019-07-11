@@ -12,11 +12,12 @@ import xlrd
 
 # web接口登录不通，店铺查询通了
 def test_login_web():
-    paths = "https://sandbox-myaccount-onerway.ronhan.com/login.htm"
+    paths = "https://sit-myaccount-onerway.ronhan.com/login.htm"
     param = {"loginType":2,"username":"new015@qq.com","password":"123456asd"}
     test_cook = requests.session()
     r_res = test_cook.post(url=paths,data=param,verify=False)
     print(r_res.text)
+    print("9996")
 
 
 
