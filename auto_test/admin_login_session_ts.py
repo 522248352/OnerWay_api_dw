@@ -3,7 +3,7 @@ import requests
 import cookielib
 import json
 # admin系统登录接口
-url = "https://sandbox-manage-onerway.ronhan.com/login.htm"
+url = "https://sit-manage-onerway.ronhan.com/login.htm"
 headers ={"Connection": "keep-alive",
           "Content-Length": "33",
           "Cache-Control": "max-age=0",
@@ -31,7 +31,7 @@ print("---------------------------------------123456")
 
 
 # admin系统 店铺查询请求
-url1 = "https://sandbox-manage-onerway.ronhan.com/sysMerchant/queryMerchant.htm"
+url1 = "https://sit-manage-onerway.ronhan.com/sysMerchant/queryMerchant.htm"
 headers1 = {"Connection": "keep-alive",
            "Upgrade-Insecure-Requests": "1",
            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36",
@@ -63,8 +63,8 @@ print(r_resu1.text)
 #     print(a.value)
 # admin系统 商户调账申请
 
-url2 = "https://sandbox-manage-onerway.ronhan.com/merchantAccountRecord/insertAccountRecord.htm"
+url2 = "https://sit-manage-onerway.ronhan.com/merchantAccountRecord/insertAccountRecord.htm"
 pam = {"accountType":"2","accountMoney":"40","merNo":"290746918668214272","merName":"张厚荣","remark": "入账40","currencyCode": "EUR"}
 r_resu2 = seson.post(url=url2,data=pam,verify=False)
-print(json.dumps(r_resu2.json(),indent=2,sort_keys=False,ensure_ascii=False))
+# print(json.dumps(r_resu2.json(),indent=2,sort_keys=False,ensure_ascii=False))
 
